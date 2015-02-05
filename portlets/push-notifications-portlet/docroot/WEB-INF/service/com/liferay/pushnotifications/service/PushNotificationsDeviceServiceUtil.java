@@ -26,7 +26,7 @@ import com.liferay.portal.service.InvokableService;
  * checks based on the propagated JAAS credentials because this service can be
  * accessed remotely.
  *
- * @author Silvio Santos
+ * @author Bruno Farache
  * @see PushNotificationsDeviceService
  * @see com.liferay.pushnotifications.service.base.PushNotificationsDeviceServiceBaseImpl
  * @see com.liferay.pushnotifications.service.impl.PushNotificationsDeviceServiceImpl
@@ -82,12 +82,6 @@ public class PushNotificationsDeviceServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		getService().sendPushNotification(toUserId, payload);
-	}
-
-	public static void sendPushNotification(java.lang.String payload)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		getService().sendPushNotification(payload);
 	}
 
 	public static void clearService() {

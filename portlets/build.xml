@@ -31,7 +31,7 @@
 
 		<copy todir="${portlet.dir}">
 			<fileset
-				dir="${sdk.dir}/tools/portlet_tmpl"
+				dir="${sdk.dir}/tools/templates/portlet_tmpl"
 			/>
 		</copy>
 
@@ -66,7 +66,7 @@
 					<then>
 						<copy todir="${portlet.dir}">
 							<fileset
-								dir="${sdk.dir}/tools/portlet_jsf_tmpl"
+								dir="${sdk.dir}/tools/templates/portlet_jsf_tmpl"
 							/>
 						</copy>
 					</then>
@@ -74,7 +74,7 @@
 
 				<copy overwrite="true" todir="${portlet.dir}">
 					<fileset
-						dir="${sdk.dir}/tools/portlet_${portlet.framework}_tmpl"
+						dir="${sdk.dir}/tools/templates/portlet_${portlet.framework}_tmpl"
 					/>
 				</copy>
 			</then>
@@ -235,6 +235,9 @@ portal-dependency-jars=vaadin.jar</echo>
 		</if>
 
 		<replace dir="${portlet.dir}">
+			<replacefilter token="@app.server.tomcat.manager.password@" value="${app.server.tomcat.manager.password}" />
+			<replacefilter token="@app.server.tomcat.manager.user@" value="${app.server.tomcat.manager.user}" />
+			<replacefilter token="@jmx.remote.port@" value="${jmx.remote.port}" />
 			<replacefilter token="@plugin.type.dir@" value="${plugin.type.dir}" />
 			<replacefilter token="@portlet.display.name@" value="${portlet.display.name}" />
 			<replacefilter token="@portlet.java.class.name@" value="${portlet.java.class.name}" />

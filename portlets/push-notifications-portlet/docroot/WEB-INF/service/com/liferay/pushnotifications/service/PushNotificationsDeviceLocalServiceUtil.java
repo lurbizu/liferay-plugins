@@ -26,7 +26,7 @@ import com.liferay.portal.service.InvokableLocalService;
  * based on the propagated JAAS credentials because this service can only be
  * accessed from within the same VM.
  *
- * @author Silvio Santos
+ * @author Bruno Farache
  * @see PushNotificationsDeviceLocalService
  * @see com.liferay.pushnotifications.service.base.PushNotificationsDeviceLocalServiceBaseImpl
  * @see com.liferay.pushnotifications.service.impl.PushNotificationsDeviceLocalServiceImpl
@@ -293,18 +293,22 @@ public class PushNotificationsDeviceLocalServiceUtil {
 		return getService().deletePushNotificationsDevice(token);
 	}
 
+	public static void resetPushNotificationSenders() {
+		getService().resetPushNotificationSenders();
+	}
+
 	public static void sendPushNotification(
-		com.liferay.portal.kernel.json.JSONObject jsonObject, int start, int end)
+		com.liferay.portal.kernel.json.JSONObject jsonObject)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		getService().sendPushNotification(jsonObject, start, end);
+		getService().sendPushNotification(jsonObject);
 	}
 
 	public static void sendPushNotification(long toUserId,
-		com.liferay.portal.kernel.json.JSONObject jsonObject, int start, int end)
+		com.liferay.portal.kernel.json.JSONObject jsonObject)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		getService().sendPushNotification(toUserId, jsonObject, start, end);
+		getService().sendPushNotification(toUserId, jsonObject);
 	}
 
 	public static void clearService() {

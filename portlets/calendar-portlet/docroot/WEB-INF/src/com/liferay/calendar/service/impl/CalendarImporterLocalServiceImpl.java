@@ -32,6 +32,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.util.ArrayUtil;
 import com.liferay.portal.kernel.util.Time;
+import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.uuid.PortalUUIDUtil;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
 import com.liferay.portal.model.Group;
@@ -40,6 +41,7 @@ import com.liferay.portal.model.ResourceBlockConstants;
 import com.liferay.portal.model.ResourceConstants;
 import com.liferay.portal.model.ResourcePermission;
 import com.liferay.portal.model.Subscription;
+import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portlet.asset.model.AssetCategory;
@@ -505,7 +507,7 @@ public class CalendarImporterLocalServiceImpl
 	}
 
 	protected AssetCategory getAssetCategory(
-			long userId, long groupId, String name)
+			long userId, long companyId, long groupId, String name)
 		throws PortalException, SystemException {
 
 		AssetVocabulary assetVocabulary = assetVocabularyPersistence.fetchByG_N(
@@ -514,6 +516,15 @@ public class CalendarImporterLocalServiceImpl
 		ServiceContext serviceContext = new ServiceContext();
 
 		serviceContext.setScopeGroupId(groupId);
+
+		User user = userPersistence.fetchByC_U(companyId, userId);
+
+		if (user == null) {
+			user = userPersistence.fetchByC_DU(companyId, true);
+
+			userId = user.getUserId();
+		}
+
 		serviceContext.setUserId(userId);
 
 		if (assetVocabulary == null) {
@@ -601,7 +612,7 @@ public class CalendarImporterLocalServiceImpl
 				List<Integer> monthsList = new ArrayList<Integer>();
 
 				for (int month : months) {
-					monthsList.add(month + 1);
+					monthsList.add(month);
 				}
 
 				recurrence.setMonths(monthsList);
@@ -730,10 +741,12 @@ public class CalendarImporterLocalServiceImpl
 
 		assetCategories.addAll(assetEntry.getCategories());
 
-		assetCategories.add(
-			getAssetCategory(
-				calEvent.getUserId(), calEvent.getGroupId(),
-				calEvent.getType()));
+		if (Validator.isNotNull(calEvent.getType())) {
+			assetCategories.add(
+				getAssetCategory(
+					calEvent.getUserId(), calEvent.getCompanyId(),
+					calEvent.getGroupId(), calEvent.getType()));
+		}
 
 		for (AssetCategory assetCategory : assetCategories) {
 			assetEntryLocalService.addAssetCategoryAssetEntry(

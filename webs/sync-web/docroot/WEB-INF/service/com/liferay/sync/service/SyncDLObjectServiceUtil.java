@@ -193,6 +193,15 @@ public class SyncDLObjectServiceUtil {
 		return getService().getPortletPreferences();
 	}
 
+	public static com.liferay.sync.model.SyncContext getSyncContext()
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getSyncContext();
+	}
+
+	/**
+	* @deprecated As of 7.0.0, replaced by {@link #getSyncContext()}
+	*/
 	public static com.liferay.sync.model.SyncContext getSyncContext(
 		java.lang.String uuid)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -283,6 +292,13 @@ public class SyncDLObjectServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService().restoreFolderFromTrash(folderId);
+	}
+
+	public static java.util.Map<java.lang.String, java.lang.Object> updateFileEntries(
+		java.io.File zipFile)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().updateFileEntries(zipFile);
 	}
 
 	public static com.liferay.sync.model.SyncDLObject updateFileEntry(

@@ -133,78 +133,98 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		_methodName23 = "addKBComment";
 
 		_methodParameterTypes23 = new String[] {
-				"long", "long", "long", "java.lang.String", "boolean",
+				"long", "long", "long", "java.lang.String", "int",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName24 = "deleteKBComments";
+		_methodName24 = "addKBComment";
 
-		_methodParameterTypes24 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes24 = new String[] {
+				"long", "long", "long", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
+			};
 
-		_methodName25 = "getKBComment";
+		_methodName25 = "deleteKBComments";
 
-		_methodParameterTypes25 = new String[] {
+		_methodParameterTypes25 = new String[] { "java.lang.String", "long" };
+
+		_methodName26 = "getKBComment";
+
+		_methodParameterTypes26 = new String[] {
 				"long", "java.lang.String", "long"
 			};
 
-		_methodName26 = "getKBComments";
-
-		_methodParameterTypes26 = new String[] { "long", "int", "int", "int" };
-
 		_methodName27 = "getKBComments";
 
-		_methodParameterTypes27 = new String[] {
-				"long", "java.lang.String", "long", "int", "int",
-				"com.liferay.portal.kernel.util.OrderByComparator"
-			};
+		_methodParameterTypes27 = new String[] { "long", "int", "int", "int" };
 
 		_methodName28 = "getKBComments";
 
 		_methodParameterTypes28 = new String[] {
-				"java.lang.String", "long", "int", "int",
+				"long", "java.lang.String", "long", "int", "int",
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
 		_methodName29 = "getKBComments";
 
 		_methodParameterTypes29 = new String[] {
-				"java.lang.String", "long", "int[][]", "int", "int"
+				"java.lang.String", "long", "int", "int", "int"
 			};
 
-		_methodName30 = "getKBCommentsCount";
+		_methodName30 = "getKBComments";
 
-		_methodParameterTypes30 = new String[] { "long", "int" };
+		_methodParameterTypes30 = new String[] {
+				"java.lang.String", "long", "int", "int",
+				"com.liferay.portal.kernel.util.OrderByComparator"
+			};
 
-		_methodName31 = "getKBCommentsCount";
+		_methodName31 = "getKBComments";
 
 		_methodParameterTypes31 = new String[] {
-				"long", "java.lang.String", "long"
+				"java.lang.String", "long", "int[][]", "int", "int"
 			};
 
 		_methodName32 = "getKBCommentsCount";
 
-		_methodParameterTypes32 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes32 = new String[] { "long", "int" };
 
 		_methodName33 = "getKBCommentsCount";
 
-		_methodParameterTypes33 = new String[] { "java.lang.String", "long", "int" };
+		_methodParameterTypes33 = new String[] {
+				"long", "java.lang.String", "long"
+			};
 
 		_methodName34 = "getKBCommentsCount";
 
-		_methodParameterTypes34 = new String[] {
+		_methodParameterTypes34 = new String[] { "java.lang.String", "long" };
+
+		_methodName35 = "getKBCommentsCount";
+
+		_methodParameterTypes35 = new String[] { "java.lang.String", "long", "int" };
+
+		_methodName36 = "getKBCommentsCount";
+
+		_methodParameterTypes36 = new String[] {
 				"java.lang.String", "long", "int[][]"
 			};
 
-		_methodName35 = "updateKBComment";
+		_methodName37 = "updateKBComment";
 
-		_methodParameterTypes35 = new String[] {
-				"long", "long", "long", "java.lang.String", "boolean", "int",
+		_methodParameterTypes37 = new String[] {
+				"long", "long", "long", "java.lang.String", "int", "int",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName36 = "updateStatus";
+		_methodName38 = "updateKBComment";
 
-		_methodParameterTypes36 = new String[] {
+		_methodParameterTypes38 = new String[] {
+				"long", "long", "long", "java.lang.String", "int",
+				"com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName39 = "updateStatus";
+
+		_methodParameterTypes39 = new String[] {
 				"long", "int", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -897,8 +917,7 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 	@Override
 	public com.liferay.knowledgebase.model.KBComment addKBComment(long userId,
 		long classNameId, long classPK, java.lang.String content,
-		boolean helpful,
-		com.liferay.portal.service.ServiceContext serviceContext)
+		int userRating, com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -915,7 +934,53 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 						
 					ClpSerializer.translateInput(content),
 						
-					helpful,
+					userRating,
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.liferay.knowledgebase.model.KBComment)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.liferay.knowledgebase.model.KBComment addKBComment(long userId,
+		long classNameId, long classPK, java.lang.String content,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24,
+					new Object[] {
+						userId,
+						
+					classNameId,
+						
+					classPK,
+						
+					ClpSerializer.translateInput(content),
 						
 					ClpSerializer.translateInput(serviceContext)
 					});
@@ -948,8 +1013,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName24,
-				_methodParameterTypes24,
+			_invokableLocalService.invokeMethod(_methodName25,
+				_methodParameterTypes25,
 				new Object[] { ClpSerializer.translateInput(className), classPK });
 		}
 		catch (Throwable t) {
@@ -981,8 +1046,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName25,
-					_methodParameterTypes25,
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
 					new Object[] {
 						userId,
 						
@@ -1021,8 +1086,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName26,
-					_methodParameterTypes26,
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
 					new Object[] { groupId, status, start, end });
 		}
 		catch (Throwable t) {
@@ -1053,8 +1118,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName27,
-					_methodParameterTypes27,
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28,
 					new Object[] {
 						userId,
 						
@@ -1090,14 +1155,54 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 
 	@Override
 	public java.util.List<com.liferay.knowledgebase.model.KBComment> getKBComments(
+		java.lang.String className, long classPK, int status, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29,
+					new Object[] {
+						ClpSerializer.translateInput(className),
+						
+					classPK,
+						
+					status,
+						
+					start,
+						
+					end
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.liferay.knowledgebase.model.KBComment>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<com.liferay.knowledgebase.model.KBComment> getKBComments(
 		java.lang.String className, long classPK, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName28,
-					_methodParameterTypes28,
+			returnObj = _invokableLocalService.invokeMethod(_methodName30,
+					_methodParameterTypes30,
 					new Object[] {
 						ClpSerializer.translateInput(className),
 						
@@ -1136,8 +1241,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName29,
-					_methodParameterTypes29,
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31,
 					new Object[] {
 						ClpSerializer.translateInput(className),
 						
@@ -1175,8 +1280,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName30,
-					_methodParameterTypes30, new Object[] { groupId, status });
+			returnObj = _invokableLocalService.invokeMethod(_methodName32,
+					_methodParameterTypes32, new Object[] { groupId, status });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1204,8 +1309,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName31,
-					_methodParameterTypes31,
+			returnObj = _invokableLocalService.invokeMethod(_methodName33,
+					_methodParameterTypes33,
 					new Object[] {
 						userId,
 						
@@ -1239,8 +1344,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName32,
-					_methodParameterTypes32,
+			returnObj = _invokableLocalService.invokeMethod(_methodName34,
+					_methodParameterTypes34,
 					new Object[] {
 						ClpSerializer.translateInput(className),
 						
@@ -1272,8 +1377,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName33,
-					_methodParameterTypes33,
+			returnObj = _invokableLocalService.invokeMethod(_methodName35,
+					_methodParameterTypes35,
 					new Object[] {
 						ClpSerializer.translateInput(className),
 						
@@ -1308,8 +1413,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName34,
-					_methodParameterTypes34,
+			returnObj = _invokableLocalService.invokeMethod(_methodName36,
+					_methodParameterTypes36,
 					new Object[] {
 						ClpSerializer.translateInput(className),
 						
@@ -1340,15 +1445,15 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 	@Override
 	public com.liferay.knowledgebase.model.KBComment updateKBComment(
 		long kbCommentId, long classNameId, long classPK,
-		java.lang.String content, boolean helpful, int status,
+		java.lang.String content, int userRating, int status,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName35,
-					_methodParameterTypes35,
+			returnObj = _invokableLocalService.invokeMethod(_methodName37,
+					_methodParameterTypes37,
 					new Object[] {
 						kbCommentId,
 						
@@ -1358,7 +1463,56 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 						
 					ClpSerializer.translateInput(content),
 						
-					helpful,
+					userRating,
+						
+					status,
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.liferay.knowledgebase.model.KBComment)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.liferay.knowledgebase.model.KBComment updateKBComment(
+		long kbCommentId, long classNameId, long classPK,
+		java.lang.String content, int status,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName38,
+					_methodParameterTypes38,
+					new Object[] {
+						kbCommentId,
+						
+					classNameId,
+						
+					classPK,
+						
+					ClpSerializer.translateInput(content),
 						
 					status,
 						
@@ -1397,8 +1551,8 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName36,
-					_methodParameterTypes36,
+			returnObj = _invokableLocalService.invokeMethod(_methodName39,
+					_methodParameterTypes39,
 					new Object[] {
 						kbCommentId,
 						
@@ -1503,4 +1657,10 @@ public class KBCommentLocalServiceClp implements KBCommentLocalService {
 	private String[] _methodParameterTypes35;
 	private String _methodName36;
 	private String[] _methodParameterTypes36;
+	private String _methodName37;
+	private String[] _methodParameterTypes37;
+	private String _methodName38;
+	private String[] _methodParameterTypes38;
+	private String _methodName39;
+	private String[] _methodParameterTypes39;
 }

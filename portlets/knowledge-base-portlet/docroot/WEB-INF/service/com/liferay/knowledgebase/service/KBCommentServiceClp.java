@@ -50,27 +50,39 @@ public class KBCommentServiceClp implements KBCommentService {
 
 		_methodParameterTypes6 = new String[] { "long", "int", "int", "int" };
 
-		_methodName7 = "getKBCommentsCount";
+		_methodName7 = "getKBComments";
 
-		_methodParameterTypes7 = new String[] { "long", "int" };
-
-		_methodName8 = "updateKBComment";
-
-		_methodParameterTypes8 = new String[] {
-				"long", "long", "long", "java.lang.String", "boolean", "int",
-				"com.liferay.portal.service.ServiceContext"
+		_methodParameterTypes7 = new String[] {
+				"long", "java.lang.String", "long", "int", "int", "int"
 			};
 
-		_methodName9 = "updateKBComment";
+		_methodName8 = "getKBCommentsCount";
+
+		_methodParameterTypes8 = new String[] { "long", "int" };
+
+		_methodName9 = "getKBCommentsCount";
 
 		_methodParameterTypes9 = new String[] {
-				"long", "long", "long", "java.lang.String", "boolean",
+				"long", "java.lang.String", "long", "int"
+			};
+
+		_methodName10 = "updateKBComment";
+
+		_methodParameterTypes10 = new String[] {
+				"long", "long", "long", "java.lang.String", "int",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName10 = "updateStatus";
+		_methodName11 = "updateKBComment";
 
-		_methodParameterTypes10 = new String[] {
+		_methodParameterTypes11 = new String[] {
+				"long", "long", "long", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName12 = "updateStatus";
+
+		_methodParameterTypes12 = new String[] {
 				"long", "int", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -264,14 +276,105 @@ public class KBCommentServiceClp implements KBCommentService {
 	}
 
 	@Override
-	public int getKBCommentsCount(long groupId, int status)
+	public java.util.List<com.liferay.knowledgebase.model.KBComment> getKBComments(
+		long groupId, java.lang.String className, long classPK, int status,
+		int start, int end)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableService.invokeMethod(_methodName7,
-					_methodParameterTypes7, new Object[] { groupId, status });
+					_methodParameterTypes7,
+					new Object[] {
+						groupId,
+						
+					ClpSerializer.translateInput(className),
+						
+					classPK,
+						
+					status,
+						
+					start,
+						
+					end
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.liferay.knowledgebase.model.KBComment>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public int getKBCommentsCount(long groupId, int status)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName8,
+					_methodParameterTypes8, new Object[] { groupId, status });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Integer)returnObj).intValue();
+	}
+
+	@Override
+	public int getKBCommentsCount(long groupId, java.lang.String className,
+		long classPK, int status)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName9,
+					_methodParameterTypes9,
+					new Object[] {
+						groupId,
+						
+					ClpSerializer.translateInput(className),
+						
+					classPK,
+						
+					status
+					});
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -299,15 +402,15 @@ public class KBCommentServiceClp implements KBCommentService {
 	@Override
 	public com.liferay.knowledgebase.model.KBComment updateKBComment(
 		long kbCommentId, long classNameId, long classPK,
-		java.lang.String content, boolean helpful, int status,
+		java.lang.String content, int status,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName8,
-					_methodParameterTypes8,
+			returnObj = _invokableService.invokeMethod(_methodName10,
+					_methodParameterTypes10,
 					new Object[] {
 						kbCommentId,
 						
@@ -316,8 +419,6 @@ public class KBCommentServiceClp implements KBCommentService {
 					classPK,
 						
 					ClpSerializer.translateInput(content),
-						
-					helpful,
 						
 					status,
 						
@@ -350,15 +451,15 @@ public class KBCommentServiceClp implements KBCommentService {
 	@Override
 	public com.liferay.knowledgebase.model.KBComment updateKBComment(
 		long kbCommentId, long classNameId, long classPK,
-		java.lang.String content, boolean helpful,
+		java.lang.String content,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName9,
-					_methodParameterTypes9,
+			returnObj = _invokableService.invokeMethod(_methodName11,
+					_methodParameterTypes11,
 					new Object[] {
 						kbCommentId,
 						
@@ -367,8 +468,6 @@ public class KBCommentServiceClp implements KBCommentService {
 					classPK,
 						
 					ClpSerializer.translateInput(content),
-						
-					helpful,
 						
 					ClpSerializer.translateInput(serviceContext)
 					});
@@ -405,8 +504,8 @@ public class KBCommentServiceClp implements KBCommentService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName10,
-					_methodParameterTypes10,
+			returnObj = _invokableService.invokeMethod(_methodName12,
+					_methodParameterTypes12,
 					new Object[] {
 						kbCommentId,
 						
@@ -459,4 +558,8 @@ public class KBCommentServiceClp implements KBCommentService {
 	private String[] _methodParameterTypes9;
 	private String _methodName10;
 	private String[] _methodParameterTypes10;
+	private String _methodName11;
+	private String[] _methodParameterTypes11;
+	private String _methodName12;
+	private String[] _methodParameterTypes12;
 }

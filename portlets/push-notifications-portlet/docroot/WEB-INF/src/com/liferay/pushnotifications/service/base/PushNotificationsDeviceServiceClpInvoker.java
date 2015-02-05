@@ -19,7 +19,7 @@ import com.liferay.pushnotifications.service.PushNotificationsDeviceServiceUtil;
 import java.util.Arrays;
 
 /**
- * @author Silvio Santos
+ * @author Bruno Farache
  * @generated
  */
 public class PushNotificationsDeviceServiceClpInvoker {
@@ -45,10 +45,6 @@ public class PushNotificationsDeviceServiceClpInvoker {
 		_methodName32 = "sendPushNotification";
 
 		_methodParameterTypes32 = new String[] { "long", "java.lang.String" };
-
-		_methodName33 = "sendPushNotification";
-
-		_methodParameterTypes33 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -84,13 +80,6 @@ public class PushNotificationsDeviceServiceClpInvoker {
 			return null;
 		}
 
-		if (_methodName33.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes33, parameterTypes)) {
-			PushNotificationsDeviceServiceUtil.sendPushNotification((java.lang.String)arguments[0]);
-
-			return null;
-		}
-
 		throw new UnsupportedOperationException();
 	}
 
@@ -104,6 +93,4 @@ public class PushNotificationsDeviceServiceClpInvoker {
 	private String[] _methodParameterTypes31;
 	private String _methodName32;
 	private String[] _methodParameterTypes32;
-	private String _methodName33;
-	private String[] _methodParameterTypes33;
 }

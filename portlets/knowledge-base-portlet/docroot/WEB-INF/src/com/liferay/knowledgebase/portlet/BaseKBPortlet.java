@@ -133,7 +133,7 @@ public abstract class BaseKBPortlet extends MVCPortlet {
 
 		KBCommentServiceUtil.deleteKBComment(kbCommentId);
 
-		SessionMessages.add(actionRequest, "feedbackDeleted");
+		SessionMessages.add(actionRequest, "suggestionDeleted");
 	}
 
 	public void deleteTempAttachment(
@@ -370,7 +370,6 @@ public abstract class BaseKBPortlet extends MVCPortlet {
 		long classNameId = ParamUtil.getLong(actionRequest, "classNameId");
 		long classPK = ParamUtil.getLong(actionRequest, "classPK");
 		String content = ParamUtil.getString(actionRequest, "content");
-		boolean helpful = ParamUtil.getBoolean(actionRequest, "helpful");
 		int status = ParamUtil.getInteger(
 			actionRequest, "status", KBCommentConstants.STATUS_ANY);
 
@@ -380,7 +379,7 @@ public abstract class BaseKBPortlet extends MVCPortlet {
 		if (cmd.equals(Constants.ADD)) {
 			KBCommentLocalServiceUtil.addKBComment(
 				themeDisplay.getUserId(), classNameId, classPK, content,
-				helpful, serviceContext);
+				serviceContext);
 		}
 		else if (cmd.equals(Constants.UPDATE)) {
 			if (status == KBCommentConstants.STATUS_ANY) {
@@ -391,11 +390,11 @@ public abstract class BaseKBPortlet extends MVCPortlet {
 			}
 
 			KBCommentServiceUtil.updateKBComment(
-				kbCommentId, classNameId, classPK, content, helpful, status,
+				kbCommentId, classNameId, classPK, content, status,
 				serviceContext);
 		}
 
-		SessionMessages.add(actionRequest, "feedbackSaved");
+		SessionMessages.add(actionRequest, "suggestionSaved");
 	}
 
 	public void updateKBCommentStatus(
@@ -411,7 +410,7 @@ public abstract class BaseKBPortlet extends MVCPortlet {
 
 		KBCommentServiceUtil.updateStatus(kbCommentId, status, serviceContext);
 
-		SessionMessages.add(actionRequest, "feedbackStatusUpdated");
+		SessionMessages.add(actionRequest, "suggestionStatusUpdated");
 	}
 
 	protected String buildEditURL(

@@ -14,6 +14,7 @@
 
 package com.liferay.knowledgebase.admin.importer.util;
 
+import com.liferay.compat.portal.kernel.util.HtmlUtil;
 import com.liferay.knowledgebase.KBArticleImportException;
 import com.liferay.knowledgebase.model.KBArticle;
 import com.liferay.markdown.converter.MarkdownConverter;
@@ -24,7 +25,6 @@ import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.repository.model.FileEntry;
 import com.liferay.portal.kernel.util.CharPool;
-import com.liferay.portal.kernel.util.HtmlUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
@@ -71,7 +71,7 @@ public class KBArticleMarkdownConverter {
 
 		_urlTitle = getUrlTitle(heading);
 
-		_title = stripIds(heading);
+		_title = HtmlUtil.unescape(stripIds(heading));
 
 		html = stripIds(html);
 

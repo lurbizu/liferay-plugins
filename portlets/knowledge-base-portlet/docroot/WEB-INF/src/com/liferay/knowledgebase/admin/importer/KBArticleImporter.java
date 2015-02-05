@@ -26,11 +26,13 @@ import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.repository.model.FileEntry;
 import com.liferay.portal.kernel.util.ArrayUtil;
+import com.liferay.portal.kernel.util.CharPool;
 import com.liferay.portal.kernel.util.FileUtil;
 import com.liferay.portal.kernel.util.StreamUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.kernel.workflow.WorkflowConstants;
 import com.liferay.portal.kernel.zip.ZipReader;
 import com.liferay.portal.kernel.zip.ZipReaderFactoryUtil;
 import com.liferay.portal.service.ServiceContext;
@@ -54,7 +56,7 @@ import java.util.TreeMap;
  */
 public class KBArticleImporter {
 
-	public void processZipFile(
+	public int processZipFile(
 			long userId, long groupId, long parentKBFolderId,
 			InputStream inputStream, ServiceContext serviceContext)
 		throws KBArticleImportException, SystemException {
@@ -69,7 +71,7 @@ public class KBArticleImporter {
 
 			Map<String, String> metadata = getMetadata(zipReader);
 
-			processKBArticleFiles(
+			return processKBArticleFiles(
 				userId, groupId, parentKBFolderId, zipReader, metadata,
 				serviceContext);
 		}
@@ -101,11 +103,18 @@ public class KBArticleImporter {
 
 		try {
 			if (kbArticle == null) {
+				int workflowAction = serviceContext.getWorkflowAction();
+
+				serviceContext.setWorkflowAction(
+					WorkflowConstants.ACTION_SAVE_DRAFT);
+
 				kbArticle = KBArticleLocalServiceUtil.addKBArticle(
 					userId, parentResourceClassNameId, parentResourcePrimaryKey,
 					kbArticleMarkdownConverter.getTitle(), urlTitle, markdown,
 					null, kbArticleMarkdownConverter.getSourceURL(), null, null,
 					serviceContext);
+
+				serviceContext.setWorkflowAction(workflowAction);
 			}
 		}
 		catch (Exception e) {
@@ -160,8 +169,12 @@ public class KBArticleImporter {
 				continue;
 			}
 
-			String folderName = zipEntry.substring(
-				0, zipEntry.lastIndexOf(StringPool.SLASH));
+			String folderName = StringPool.SLASH;
+
+			if (zipEntry.indexOf(CharPool.SLASH) != -1) {
+				folderName = zipEntry.substring(
+					0, zipEntry.lastIndexOf(StringPool.SLASH));
+			}
 
 			List<String> fileEntryNames = folderNameFileEntryNamesMap.get(
 				folderName);
@@ -215,11 +228,13 @@ public class KBArticleImporter {
 		}
 	}
 
-	protected void processKBArticleFiles(
+	protected int processKBArticleFiles(
 			long userId, long groupId, long parentKBFolderId,
 			ZipReader zipReader, Map<String, String> metadata,
 			ServiceContext serviceContext)
 		throws KBArticleImportException, SystemException {
+
+		int importedKBArticleCount = 0;
 
 		Map<String, List<String>> folderNameFileEntryNamesMap =
 			getFolderNameFileEntryNamesMap(zipReader);
@@ -264,6 +279,8 @@ public class KBArticleImporter {
 					KBArticleConstants.getClassName());
 				sectionResourcePrimaryKey =
 					sectionIntroKBArticle.getResourcePrimKey();
+
+				importedKBArticleCount++;
 			}
 
 			for (String sectionFileEntryName : sectionFileEntryNames) {
@@ -283,8 +300,12 @@ public class KBArticleImporter {
 					sectionResourceClassNameId, sectionResourcePrimaryKey,
 					sectionMarkdown, sectionFileEntryName, zipReader, metadata,
 					serviceContext);
+
+				importedKBArticleCount++;
 			}
 		}
+
+		return importedKBArticleCount;
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(KBArticleImporter.class);

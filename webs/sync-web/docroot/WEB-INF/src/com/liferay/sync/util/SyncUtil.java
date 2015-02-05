@@ -27,18 +27,22 @@ import com.liferay.portal.kernel.util.ClassUtil;
 import com.liferay.portal.kernel.util.Digester;
 import com.liferay.portal.kernel.util.DigesterUtil;
 import com.liferay.portal.kernel.util.FileUtil;
+import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.StreamUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.model.Group;
 import com.liferay.portal.model.Lock;
+import com.liferay.portal.service.GroupLocalServiceUtil;
 import com.liferay.portlet.documentlibrary.NoSuchFileVersionException;
 import com.liferay.portlet.documentlibrary.model.DLFileEntry;
 import com.liferay.portlet.documentlibrary.model.DLFileEntryConstants;
 import com.liferay.portlet.documentlibrary.model.DLFileVersion;
 import com.liferay.portlet.documentlibrary.model.DLFolder;
 import com.liferay.portlet.documentlibrary.service.DLFileVersionLocalServiceUtil;
+import com.liferay.sync.SyncSiteUnavailableException;
 import com.liferay.sync.model.SyncConstants;
 import com.liferay.sync.model.SyncDLObject;
 import com.liferay.sync.model.impl.SyncDLObjectImpl;
@@ -126,6 +130,16 @@ public class SyncUtil {
 		sb.append(rootCauseJSONObject);
 
 		return StringUtil.unquote(sb.toString());
+	}
+
+	public static void checkSyncEnabled(long groupId)
+		throws PortalException, SystemException {
+
+		Group group = GroupLocalServiceUtil.fetchGroup(groupId);
+
+		if ((group == null) || !isSyncEnabled(group)) {
+			throw new SyncSiteUnavailableException();
+		}
 	}
 
 	public static String getChecksum(DLFileVersion dlFileVersion)
@@ -272,6 +286,11 @@ public class SyncUtil {
 		return isSupportedFolder(dlFolder);
 	}
 
+	public static boolean isSyncEnabled(Group group) {
+		return GetterUtil.getBoolean(
+			group.getTypeSettingsProperty("syncEnabled"), true);
+	}
+
 	public static void patchFile(
 			File originalFile, File deltaFile, File patchedFile)
 		throws PortalException {
@@ -316,14 +335,15 @@ public class SyncUtil {
 	}
 
 	public static SyncDLObject toSyncDLObject(
-			DLFileEntry dlFileEntry, String event)
+			DLFileEntry dlFileEntry, String event, boolean calculateChecksum)
 		throws PortalException, SystemException {
 
-		return toSyncDLObject(dlFileEntry, event, false);
+		return toSyncDLObject(dlFileEntry, event, calculateChecksum, false);
 	}
 
 	public static SyncDLObject toSyncDLObject(
-			DLFileEntry dlFileEntry, String event, boolean excludeWorkingCopy)
+			DLFileEntry dlFileEntry, String event, boolean calculateChecksum,
+			boolean excludeWorkingCopy)
 		throws PortalException, SystemException {
 
 		DLFileVersion dlFileVersion = null;
@@ -354,9 +374,9 @@ public class SyncUtil {
 			}
 			catch (NoSuchFileVersionException nsfve) {
 
-				// Publishing a checked out file entry on a staged site will
-				// get the staged file entry's lock even though the live
-				// file entry is not checked out
+				// Publishing a checked out file entry on a staged site will get
+				// the staged file entry's lock even though the live file entry
+				// is not checked out
 
 				dlFileVersion = DLFileVersionLocalServiceUtil.getFileVersion(
 					dlFileEntry.getFileEntryId(), dlFileEntry.getVersion());
@@ -380,7 +400,16 @@ public class SyncUtil {
 		syncDLObject.setExtraSettings(dlFileVersion.getExtraSettings());
 		syncDLObject.setVersion(dlFileVersion.getVersion());
 		syncDLObject.setSize(dlFileVersion.getSize());
-		syncDLObject.setChecksum(getChecksum(dlFileVersion));
+
+		if (calculateChecksum) {
+			if (Validator.isNull(dlFileVersion.getChecksum())) {
+				syncDLObject.setChecksum(getChecksum(dlFileVersion));
+			}
+			else {
+				syncDLObject.setChecksum(dlFileVersion.getChecksum());
+			}
+		}
+
 		syncDLObject.setEvent(event);
 		syncDLObject.setLockExpirationDate(lockExpirationDate);
 		syncDLObject.setLockUserId(lockUserId);
@@ -423,10 +452,17 @@ public class SyncUtil {
 	public static SyncDLObject toSyncDLObject(FileEntry fileEntry, String event)
 		throws PortalException, SystemException {
 
+		return toSyncDLObject(fileEntry, event, false);
+	}
+
+	public static SyncDLObject toSyncDLObject(
+			FileEntry fileEntry, String event, boolean calculateChecksum)
+		throws PortalException, SystemException {
+
 		if (fileEntry.getModel() instanceof DLFileEntry) {
 			DLFileEntry dlFileEntry = (DLFileEntry)fileEntry.getModel();
 
-			return toSyncDLObject(dlFileEntry, event);
+			return toSyncDLObject(dlFileEntry, event, calculateChecksum);
 		}
 
 		throw new PortalException(

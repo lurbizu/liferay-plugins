@@ -22,7 +22,7 @@ import com.liferay.pushnotifications.service.PushNotificationsDeviceLocalService
 import com.liferay.pushnotifications.service.PushNotificationsDeviceServiceUtil;
 
 /**
- * @author Silvio Santos
+ * @author Bruno Farache
  */
 public class ClpMessageListener extends BaseMessageListener {
 	public static String getServletContextName() {

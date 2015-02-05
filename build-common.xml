@@ -51,6 +51,15 @@
 	<property name="app.server.classes.portal.dir" value="${app.server.portal.dir}/WEB-INF/classes" />
 	<property location="${app.server.portal.dir}/WEB-INF/lib" name="app.server.lib.portal.dir" />
 
+	<if>
+		<not>
+			<equals arg1="${junit.debug}" arg2="true" />
+		</not>
+		<then>
+			<var name="junit.debug.jpda" value="" />
+		</then>
+	</if>
+
 	<import file="build-common-ivy.xml" />
 
 	<path id="plugin.classpath">
@@ -177,15 +186,48 @@ Error-Prone was automatically installed. Please rerun your task.
 			<java
 				classname="com.liferay.portal.tools.SassToCssBuilder"
 				classpathref="portal.classpath"
-				failonerror="true"
 				fork="true"
 				newenvironment="true"
+				outputproperty="build-css.output"
 			>
 				<jvmarg value="-Dliferay.lib.portal.dir=${app.server.lib.portal.dir}" />
 				<arg value="sass.dir=/" />
 				<arg value="sass.docroot.dir=${module.dir.unix}/docroot" />
 				<arg value="sass.portal.common.dir=${app.server.portal.dir}/html/css/common" />
 			</java>
+
+			<echo>${build-css.output}</echo>
+
+			<if>
+				<contains string="${build-css.output}" substring="Error" />
+				<then>
+					<fail>Sass to CSS Builder generated exceptions.</fail>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="gradle-execute">
+		<attribute name="task" />
+ 
+		<sequential>
+			<if>
+				<os family="unix" />
+				<then>
+					<property name="gradlew.suffix" value="" />
+
+					<chmod file="${sdk.dir}/tools/gradle/gradlew${gradlew.suffix}" perm="a+x" />
+				</then>
+				<else>
+					<property name="gradlew.suffix" value=".bat" />
+				</else>
+			</if>
+ 
+			<exec executable="${sdk.dir}/tools/gradle/gradlew${gradlew.suffix}" failonerror="true">
+				<arg value="-PpluginsExcludes=${plugins.excludes}" />
+				<arg value="-PpluginsIncludes=${plugins.includes}" />
+				<arg value="@{task}" />
+			</exec>
 		</sequential>
 	</macrodef>
 
@@ -296,6 +338,7 @@ Error-Prone was automatically installed. Please rerun your task.
 			<delete file="${plugin.pom.file}" />
 			<delete file="${plugin.sources.file}" />
 			<delete file="${plugin.src.file}" />
+			<delete file="${plugin.wsdd.file}" />
 
 			<if>
 				<equals arg1="${clean.delete.ivy.md5}" arg2="true" />
@@ -356,6 +399,7 @@ Error-Prone was automatically installed. Please rerun your task.
 					</if>
 
 					<delete file="${module.auto.deploy.dir}/${plugin.name}.${plugin.packaging}" />
+					<delete file="${module.auto.deploy.dir}/${plugin.name}-wsdd.jar" />
 				</then>
 			</if>
 		</sequential>
@@ -916,12 +960,14 @@ Please find a solution that does not require portal-impl.jar.
 				module.dir="@{module.dir}"
 			/>
 
-			<compile-test-integration
+			<compile-test-cmd
 				module.dir="@{module.dir}"
+				test.type="integration"
 			/>
 
-			<compile-test-unit
+			<compile-test-cmd
 				module.dir="@{module.dir}"
+				test.type="unit"
 			/>
 		</sequential>
 	</macrodef>
@@ -983,28 +1029,6 @@ Please find a solution that does not require portal-impl.jar.
 					/>
 				</then>
 			</if>
-		</sequential>
-	</macrodef>
-
-	<macrodef name="compile-test-integration">
-		<attribute name="module.dir" />
-
-		<sequential>
-			<compile-test-cmd
-				module.dir="@{module.dir}"
-				test.type="integration"
-			/>
-		</sequential>
-	</macrodef>
-
-	<macrodef name="compile-test-unit">
-		<attribute name="module.dir" />
-
-		<sequential>
-			<compile-test-cmd
-				module.dir="@{module.dir}"
-				test.type="unit"
-			/>
 		</sequential>
 	</macrodef>
 
@@ -1278,6 +1302,16 @@ Please find a solution that does not require portal-impl.jar.
 								file="${plugin.file}"
 								tofile="${module.auto.deploy.dir}/${plugin.name}.${plugin.packaging}"
 							/>
+
+							<if>
+								<available file="${plugin.wsdd.file}" />
+								<then>
+									<copy 
+										file="${plugin.wsdd.file}" 
+										tofile="${module.auto.deploy.dir}/${plugin.name}-wsdd.jar" 
+									/>
+								</then>
+							</if>
 						</then>
 					</if>
 				</else>
@@ -1751,7 +1785,7 @@ Please find a solution that does not require portal-impl.jar.
 												/>
 												<fileset
 													dir="${temp.deployed.plugin.dir}"
-													includes="WEB-INF/web.xml"
+													includes="WEB-INF/liferay-web.xml,WEB-INF/web.xml"
 												/>
 												<fileset
 													dir="${temp.deployed.plugin.dir}"
@@ -1903,6 +1937,20 @@ Please find a solution that does not require portal-impl.jar.
 			<delete dir="@{dir}" />
 
 			<mkdir dir="@{dir}" />
+		</sequential>
+	</macrodef>
+
+	<macrodef name="reset-gradle">
+		<attribute name="module.dir" />
+
+		<sequential>
+			<delete file="@{module.dir}/dependency-settings.gradle" />
+
+			<touch file="@{module.dir}/dependency-settings.gradle" />
+
+			<delete file="@{module.dir}/build.gradle" />
+
+			<touch file="@{module.dir}/build.gradle" />
 		</sequential>
 	</macrodef>
 
@@ -2131,7 +2179,7 @@ Please find a solution that does not require portal-impl.jar.
 			<test-cmd
 				junit.forkmode="once"
 				module.dir="@{module.dir}"
-				test.class="${test.class}"
+				test.class="**/${test.class}.class"
 				test.type="${test.type}"
 			/>
 		</sequential>
@@ -2175,14 +2223,17 @@ Please find a solution that does not require portal-impl.jar.
 								<jvmarg value="-Dexternal-properties=${test.properties}" />
 								<jvmarg value="-Dfile.encoding=UTF-8" />
 								<jvmarg value="-Djava.net.preferIPv4Stack=true" />
+								<jvmarg value="-Dliferay.mode=test" />
 								<jvmarg value="-Dsdk.dir=${sdk.dir}" />
+								<jvmarg value="-Dtest.class.group.index=${test.class.group.index}" />
+								<jvmarg value="-Dtest.class.groups=${TEST_CLASS_GROUPS}" />
 								<jvmarg value="-Duser.timezone=GMT" />
 								<classpath location="@{module.dir}/test-coverage" />
 								<classpath refid="test.classpath" />
 								<formatter type="brief" usefile="false" />
 								<formatter type="xml" />
 								<batchtest todir="@{module.dir}/test-results/@{test.type}">
-									<fileset dir="@{module.dir}/test-classes/@{test.type}" includes="**/@{test.class}.class">
+									<fileset dir="@{module.dir}/test-classes/@{test.type}" includes="@{test.class}">
 										<filename regex="${junit.test.excludes}" negate="true" />
 									</fileset>
 								</batchtest>
@@ -2203,7 +2254,7 @@ Please find a solution that does not require portal-impl.jar.
 			<test-cmd
 				junit.forkmode="once"
 				module.dir="@{module.dir}"
-				test.class="*Test"
+				test.class="**/*Test.class"
 				test.type="integration"
 			/>
 		</sequential>
@@ -2216,7 +2267,7 @@ Please find a solution that does not require portal-impl.jar.
 			<test-cmd
 				junit.forkmode="perTest"
 				module.dir="@{module.dir}"
-				test.class="*Test"
+				test.class="**/*Test.class"
 				test.type="unit"
 			/>
 		</sequential>
@@ -2651,6 +2702,10 @@ for (String path : paths) {
 		<delete file="ServiceBuilder.temp" />
 	</target>
 
+	<target name="hello">
+		<gradle-execute task="hello" />
+	</target>
+
 	<target name="jar">
 		<loop-macrodef-or-target
 			module.dirs="${plugins.includes.path}"
@@ -2664,6 +2719,37 @@ for (String path : paths) {
 		</tstamp>
 
 		<echo message="${current.time}" />
+	</target>
+
+	<target name="reset-gradle">
+		<loop-macrodef-or-target
+			module.dirs="${plugins.includes.path}"
+			target.name="reset-gradle"
+		/>
+	</target>
+
+	<target name="run-pmd">
+		<path id="classpath.net.sourceforge.pmd">
+			<fileset dir="${sdk.dir}/dependencies/net.sourceforge.pmd/lib" includes="*.jar" />
+		</path>
+
+		<taskdef classpathref="classpath.net.sourceforge.pmd" classname="net.sourceforge.pmd.ant.PMDTask" name="pmd" />
+
+		<if>
+			<not>
+				<isset property="pmd.basedir" />
+			</not>
+			<then>
+				<property name="pmd.basedir" value="${basedir}" />
+			</then>
+		</if>
+
+		<pmd shortFilenames="true" threads="${pmd.threads}">
+			<fileset dir="${pmd.basedir}" excludes="${pmd.java.excludes}" includes="${pmd.java.includes}" />
+			<formatter toConsole="true" type="text" />
+			<ruleset>${pmd.java.ruleset}</ruleset>
+			<sourceLanguage name="java" version="${ant.build.javac.source}" />
+		</pmd>
 	</target>
 
 	<target name="setup-arquillian">

@@ -77,32 +77,17 @@ else {
 
 	<aui:fieldset>
 		<aui:field-wrapper label="current-parent">
-			<div class="input-append">
-				<liferay-ui:input-resource url="<%= parentTitle %>" />
+			<aui:input label="" name="currentParentTitle" readonly="<%= true %>" value="<%= parentTitle %>" />
 
-				<liferay-ui:input-resource cssClass="input-mini" url="<%= BigDecimal.valueOf(priority).toPlainString() %>" />
-			</div>
+			<aui:input cssClass="input-mini" label="priority" name="currentPriority" readonly="<%= true %>" value="<%= BigDecimal.valueOf(priority).toPlainString() %>" />
 		</aui:field-wrapper>
 
-		<aui:field-wrapper label="new-parent">
-			<div id="<portlet:namespace />newParent">
-				<liferay-util:include page="/admin/new_parent.jsp" servletContext="<%= application %>" />
-			</div>
-		</aui:field-wrapper>
+		<liferay-util:include page="/admin/new_parent.jsp" servletContext="<%= application %>" />
 
 		<aui:button-row cssClass="kb-submit-buttons">
-			<aui:button type="submit" />
+			<aui:button type="submit" value="move" />
 
 			<aui:button href="<%= redirect %>" type="cancel" />
 		</aui:button-row>
 	</aui:fieldset>
 </aui:form>
-
-<aui:script>
-	function <portlet:namespace />selectKBObject(parentTitle, parentPriority, parentResourcePrimKey, parentResourceClassNameId) {
-		document.<portlet:namespace />fm.<portlet:namespace />parentPriority.value = parentPriority;
-		document.<portlet:namespace />fm.<portlet:namespace />parentResourceClassNameId.value = parentResourceClassNameId;
-		document.<portlet:namespace />fm.<portlet:namespace />parentResourcePrimKey.value = parentResourcePrimKey;
-		document.<portlet:namespace />fm.<portlet:namespace />parentTitle.value = parentTitle;
-	}
-</aui:script>

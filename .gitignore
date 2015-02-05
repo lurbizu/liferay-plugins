@@ -15,13 +15,13 @@ _sass_cache_*.css
 
 .svn
 /.bnd
+/.gradle
 /.ivy
 
 /*/*/bin
 /*/*/classes
 /*/*/javadoc
 /*/*/temp
-/*/*/test/integration/arquillian.xml
 /*/*/test-classes
 /*/*/test-results
 /*/*/tmp
@@ -33,6 +33,10 @@ _sass_cache_*.css
 /build.*.properties
 /dist
 
+/hooks/*/test/integration/arquillian.xml
+
+/portlets/*/test/integration/arquillian.xml
+
 /themes/*/docroot/css
 /themes/*/docroot/images
 /themes/*/docroot/js
@@ -41,3 +45,4 @@ _sass_cache_*.css
 /themes/*/docroot/WEB-INF/lib
 
 /tools/*/*/*/lib
+/tools/node*

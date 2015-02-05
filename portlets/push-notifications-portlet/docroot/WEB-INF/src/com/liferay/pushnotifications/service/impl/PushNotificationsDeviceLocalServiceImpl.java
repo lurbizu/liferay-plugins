@@ -15,14 +15,16 @@
 package com.liferay.pushnotifications.service.impl;
 
 import com.liferay.portal.kernel.bean.BeanReference;
+import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.json.JSONObject;
-import com.liferay.portal.model.User;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.pushnotifications.PushNotificationsException;
 import com.liferay.pushnotifications.model.PushNotificationsDevice;
 import com.liferay.pushnotifications.sender.PushNotificationsSender;
 import com.liferay.pushnotifications.service.base.PushNotificationsDeviceLocalServiceBaseImpl;
-import com.liferay.pushnotifications.util.PushNotificationsConstants;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -70,18 +72,26 @@ public class PushNotificationsDeviceLocalServiceImpl
 	}
 
 	@Override
-	public void sendPushNotification(JSONObject jsonObject, int start, int end)
-		throws PortalException, SystemException {
+	public void resetPushNotificationSenders() {
+		for (Map.Entry<String, PushNotificationsSender> entry :
+				_pushNotificationsSenders.entrySet()) {
 
-		sendPushNotification(0, jsonObject, start, end);
+			PushNotificationsSender pushNotificationsSender = entry.getValue();
+
+			pushNotificationsSender.reset();
+		}
 	}
 
 	@Override
-	public void sendPushNotification(
-			long toUserId, JSONObject jsonObject, int start, int end)
+	public void sendPushNotification(JSONObject jsonObject)
 		throws PortalException, SystemException {
 
-		addFromUserDetails(jsonObject);
+		sendPushNotification(0, jsonObject);
+	}
+
+	@Override
+	public void sendPushNotification(long toUserId, JSONObject jsonObject)
+		throws PortalException, SystemException {
 
 		for (Map.Entry<String, PushNotificationsSender> entry :
 				_pushNotificationsSenders.entrySet()) {
@@ -90,7 +100,8 @@ public class PushNotificationsDeviceLocalServiceImpl
 
 			List<PushNotificationsDevice> pushNotificationsDevices =
 				getPushNotificationsDevices(
-					toUserId, entry.getKey(), start, end);
+					toUserId, entry.getKey(), QueryUtil.ALL_POS,
+					QueryUtil.ALL_POS);
 
 			for (PushNotificationsDevice pushNotificationsDevice :
 					pushNotificationsDevices) {
@@ -107,6 +118,11 @@ public class PushNotificationsDeviceLocalServiceImpl
 			try {
 				pushNotificationsSender.send(tokens, jsonObject);
 			}
+			catch (PushNotificationsException pne) {
+				if (_log.isWarnEnabled()) {
+					_log.warn(pne.getMessage());
+				}
+			}
 			catch (PortalException pe) {
 				throw pe;
 			}
@@ -114,24 +130,6 @@ public class PushNotificationsDeviceLocalServiceImpl
 				throw new PortalException(e);
 			}
 		}
-	}
-
-	protected void addFromUserDetails(JSONObject jsonObject)
-		throws PortalException, SystemException {
-
-		JSONObject fromUserJSONObject = jsonObject.getJSONObject(
-			PushNotificationsConstants.FROM_USER);
-
-		long fromUserId = fromUserJSONObject.getLong(
-			PushNotificationsConstants.USER_ID);
-
-		User user = userLocalService.getUser(fromUserId);
-
-		fromUserJSONObject.put(
-			PushNotificationsConstants.FULL_NAME, user.getFullName());
-		fromUserJSONObject.put(
-			PushNotificationsConstants.PORTRAIT_ID, user.getPortraitId());
-		fromUserJSONObject.put(PushNotificationsConstants.UUID, user.getUuid());
 	}
 
 	protected List<PushNotificationsDevice> getPushNotificationsDevices(
@@ -146,6 +144,9 @@ public class PushNotificationsDeviceLocalServiceImpl
 		return pushNotificationsDevicePersistence.findByU_P(
 			toUserId, platform, start, end);
 	}
+
+	private static Log _log = LogFactoryUtil.getLog(
+		PushNotificationsDeviceLocalServiceImpl.class);
 
 	@BeanReference(name = "pushNotificationsSenders")
 	private Map<String, PushNotificationsSender> _pushNotificationsSenders;

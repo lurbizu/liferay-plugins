@@ -16,6 +16,7 @@ package com.liferay.sync.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface SyncDLFileVersionDiffLocalService extends BaseLocalService,
 	* @return the sync d l file version diff that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.sync.model.SyncDLFileVersionDiff addSyncDLFileVersionDiff(
 		com.liferay.sync.model.SyncDLFileVersionDiff syncDLFileVersionDiff)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface SyncDLFileVersionDiffLocalService extends BaseLocalService,
 	* @throws PortalException if a sync d l file version diff with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.sync.model.SyncDLFileVersionDiff deleteSyncDLFileVersionDiff(
 		long syncDLFileVersionDiffId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -83,11 +86,14 @@ public interface SyncDLFileVersionDiffLocalService extends BaseLocalService,
 	*
 	* @param syncDLFileVersionDiff the sync d l file version diff
 	* @return the sync d l file version diff that was removed
+	* @throws PortalException
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.sync.model.SyncDLFileVersionDiff deleteSyncDLFileVersionDiff(
 		com.liferay.sync.model.SyncDLFileVersionDiff syncDLFileVersionDiff)
-		throws com.liferay.portal.kernel.exception.SystemException;
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 
 	public com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery();
 
@@ -226,6 +232,7 @@ public interface SyncDLFileVersionDiffLocalService extends BaseLocalService,
 	* @return the sync d l file version diff that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.sync.model.SyncDLFileVersionDiff updateSyncDLFileVersionDiff(
 		com.liferay.sync.model.SyncDLFileVersionDiff syncDLFileVersionDiff)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -256,6 +263,10 @@ public interface SyncDLFileVersionDiffLocalService extends BaseLocalService,
 			com.liferay.portal.kernel.exception.SystemException;
 
 	public void deleteExpiredSyncDLFileVersionDiffs()
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void deleteSyncDLFileVersionDiffs(long fileEntryId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 

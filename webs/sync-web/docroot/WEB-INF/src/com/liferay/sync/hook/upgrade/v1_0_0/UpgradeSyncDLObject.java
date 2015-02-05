@@ -82,7 +82,7 @@ public class UpgradeSyncDLObject extends UpgradeProcess {
 
 				try {
 					SyncDLObject fileEntrySyncDLObject =
-						SyncUtil.toSyncDLObject(dlFileEntry, event);
+						SyncUtil.toSyncDLObject(dlFileEntry, event, true);
 
 					syncDLObjects.add(fileEntrySyncDLObject);
 
@@ -133,9 +133,8 @@ public class UpgradeSyncDLObject extends UpgradeProcess {
 			DLFileEntryConstants.PRIVATE_WORKING_COPY_VERSION,
 			SyncConstants.TYPE_FILE);
 
-		List<Group> groups =
-			GroupLocalServiceUtil.getGroups(
-				QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+		List<Group> groups = GroupLocalServiceUtil.getGroups(
+			QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 
 		for (Group group : groups) {
 			if (group.isStaged()) {

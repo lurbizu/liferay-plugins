@@ -38,6 +38,9 @@ import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.io.unsync.UnsyncByteArrayInputStream;
+import com.liferay.portal.kernel.json.JSONException;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.search.Field;
 import com.liferay.portal.kernel.search.Sort;
 import com.liferay.portal.kernel.search.SortFactoryUtil;
@@ -75,6 +78,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.portlet.PortletPreferences;
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletURL;
 import javax.portlet.RenderResponse;
@@ -88,55 +92,37 @@ import javax.servlet.http.HttpServletRequest;
 public class KnowledgeBaseUtil {
 
 	public static void addPortletBreadcrumbEntries(
+			long oldParentResourceClassNameId, long oldParentResourcePrimKey,
 			long parentResourceClassNameId, long parentResourcePrimKey,
 			String mvcPath, HttpServletRequest request,
 			RenderResponse renderResponse)
 		throws PortalException, SystemException {
 
-		PortletURL portletURL = renderResponse.createRenderURL();
+		Map<String, Object> parameters = new HashMap<String, Object>();
 
-		portletURL.setParameter("mvcPath", mvcPath);
-		portletURL.setParameter(
-			"parentResourcePrimKey", String.valueOf(parentResourcePrimKey));
-		portletURL.setParameter(
-			"parentResourceClassNameId",
-			String.valueOf(parentResourceClassNameId));
+		parameters.put(
+			"oldParentResourceClassNameId", oldParentResourceClassNameId);
+		parameters.put("oldParentResourcePrimKey", oldParentResourcePrimKey);
+		parameters.put("parentResourceClassNameId", parentResourceClassNameId);
+		parameters.put("parentResourcePrimKey", parentResourcePrimKey);
+		parameters.put("mvcPath", mvcPath);
 
-		if (parentResourcePrimKey ==
-				KBFolderConstants.DEFAULT_PARENT_FOLDER_ID) {
+		addPortletBreadcrumbEntries(parameters, request, renderResponse);
+	}
 
-			ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
-				WebKeys.THEME_DISPLAY);
+	public static void addPortletBreadcrumbEntries(
+			long parentResourceClassNameId, long parentResourcePrimKey,
+			String mvcPath, HttpServletRequest request,
+			RenderResponse renderResponse)
+		throws PortalException, SystemException {
 
-			PortalUtil.addPortletBreadcrumbEntry(
-				request, themeDisplay.translate("home"), portletURL.toString());
-		}
-		else if (parentResourceClassNameId ==
-					PortalUtil.getClassNameId(
-						KBFolderConstants.getClassName())) {
+		Map<String, Object> parameters = new HashMap<String, Object>();
 
-			KBFolder kbFolder = KBFolderServiceUtil.getKBFolder(
-				parentResourcePrimKey);
+		parameters.put("parentResourceClassNameId", parentResourceClassNameId);
+		parameters.put("parentResourcePrimKey", parentResourcePrimKey);
+		parameters.put("mvcPath", mvcPath);
 
-			addPortletBreadcrumbEntries(
-				kbFolder.getClassNameId(), kbFolder.getParentKBFolderId(),
-				mvcPath, request, renderResponse);
-
-			PortalUtil.addPortletBreadcrumbEntry(
-				request, kbFolder.getName(), portletURL.toString());
-		}
-		else {
-			KBArticle kbArticle = KBArticleServiceUtil.getLatestKBArticle(
-				parentResourcePrimKey, WorkflowConstants.STATUS_ANY);
-
-			addPortletBreadcrumbEntries(
-				kbArticle.getParentResourceClassNameId(),
-				kbArticle.getParentResourcePrimKey(), mvcPath, request,
-				renderResponse);
-
-			PortalUtil.addPortletBreadcrumbEntry(
-				request, kbArticle.getTitle(), portletURL.toString());
-		}
+		addPortletBreadcrumbEntries(parameters, request, renderResponse);
 	}
 
 	public static List<KBFolder> getAlternateRootKBFolders(
@@ -412,6 +398,20 @@ public class KnowledgeBaseUtil {
 		};
 	}
 
+	public static String getPreferredKBFolderURLTitle(
+			PortalPreferences portalPreferences, String contentRootPrefix)
+		throws JSONException {
+
+		String preferredKBFolderURLTitle = portalPreferences.getValue(
+			PortletKeys.KNOWLEDGE_BASE_DISPLAY, "preferredKBFolderURLTitle",
+			"{}");
+
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(
+			preferredKBFolderURLTitle);
+
+		return jsonObject.getString(contentRootPrefix, StringPool.BLANK);
+	}
+
 	public static final int getPreviousStatus(int status) {
 		if (status == KBCommentConstants.STATUS_COMPLETED) {
 			return KBCommentConstants.STATUS_IN_PROGRESS;
@@ -452,7 +452,7 @@ public class KnowledgeBaseUtil {
 		}
 		else {
 			throw new IllegalArgumentException(
-				String.format("Invalid feedback status %s", status));
+				String.format("Invalid suggestion status %s", status));
 		}
 	}
 
@@ -468,7 +468,7 @@ public class KnowledgeBaseUtil {
 		}
 		else {
 			throw new IllegalArgumentException(
-				String.format("Invalid feedback status %s", status));
+				String.format("Invalid suggestion status %s", status));
 		}
 	}
 
@@ -497,6 +497,25 @@ public class KnowledgeBaseUtil {
 		Matcher matcher = _validFriendlyUrlPattern.matcher(urlTitle);
 
 		return matcher.matches();
+	}
+
+	public static void setPreferredKBFolderURLTitle(
+			PortalPreferences portalPreferences, String contentRootPrefix,
+			String value)
+		throws JSONException {
+
+		String preferredKBFolderURLTitle = portalPreferences.getValue(
+			PortletKeys.KNOWLEDGE_BASE_DISPLAY, "preferredKBFolderURLTitle",
+			"{}");
+
+		JSONObject jsonObject = JSONFactoryUtil.createJSONObject(
+			preferredKBFolderURLTitle);
+
+		jsonObject.put(contentRootPrefix, value);
+
+		portalPreferences.setValue(
+			PortletKeys.KNOWLEDGE_BASE_DISPLAY, "preferredKBFolderURLTitle",
+			jsonObject.toString());
 	}
 
 	public static List<KBArticle> sort(
@@ -565,6 +584,63 @@ public class KnowledgeBaseUtil {
 		return s.substring(x, s.length());
 	}
 
+	protected static void addPortletBreadcrumbEntries(
+			Map<String, Object> parameters, HttpServletRequest request,
+			RenderResponse renderResponse)
+		throws PortalException, SystemException {
+
+		PortletURL portletURL = renderResponse.createRenderURL();
+
+		for (Map.Entry<String, Object> entry : parameters.entrySet()) {
+			Object value = entry.getValue();
+
+			portletURL.setParameter(entry.getKey(), value.toString());
+		}
+
+		long kbFolderClassNameId = PortalUtil.getClassNameId(
+			KBFolderConstants.getClassName());
+
+		long parentResourceClassNameId = (Long)parameters.get(
+			"parentResourceClassNameId");
+		long parentResourcePrimKey = (Long)parameters.get(
+			"parentResourcePrimKey");
+
+		String mvcPath = (String)parameters.get("mvcPath");
+
+		if (parentResourcePrimKey ==
+				KBFolderConstants.DEFAULT_PARENT_FOLDER_ID) {
+
+			ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(
+				WebKeys.THEME_DISPLAY);
+
+			PortalUtil.addPortletBreadcrumbEntry(
+				request, themeDisplay.translate("home"), portletURL.toString());
+		}
+		else if (parentResourceClassNameId == kbFolderClassNameId) {
+			KBFolder kbFolder = KBFolderServiceUtil.getKBFolder(
+				parentResourcePrimKey);
+
+			addPortletBreadcrumbEntries(
+				kbFolder.getClassNameId(), kbFolder.getParentKBFolderId(),
+				mvcPath, request, renderResponse);
+
+			PortalUtil.addPortletBreadcrumbEntry(
+				request, kbFolder.getName(), portletURL.toString());
+		}
+		else {
+			KBArticle kbArticle = KBArticleServiceUtil.getLatestKBArticle(
+				parentResourcePrimKey, WorkflowConstants.STATUS_ANY);
+
+			addPortletBreadcrumbEntries(
+				kbArticle.getParentResourceClassNameId(),
+				kbArticle.getParentResourcePrimKey(), mvcPath, request,
+				renderResponse);
+
+			PortalUtil.addPortletBreadcrumbEntry(
+				request, kbArticle.getTitle(), portletURL.toString());
+		}
+	}
+
 	private static long getCurrentRootKBFolder(
 			PortletRequest portletRequest, long groupId, long kbFolderId)
 		throws PortalException, SystemException {
@@ -572,13 +648,17 @@ public class KnowledgeBaseUtil {
 		PortalPreferences portalPreferences =
 			PortletPreferencesFactoryUtil.getPortalPreferences(portletRequest);
 
-		String kbFolderUrlTitle = portalPreferences.getValue(
-			PortletKeys.KNOWLEDGE_BASE_DISPLAY, "preferredKBFolderUrlTitle",
-			null);
+		PortletPreferences portletPreferences = portletRequest.getPreferences();
+
+		String contentRootPrefix = GetterUtil.getString(
+			portletPreferences.getValue("contentRootPrefix", null));
+
+		String kbFolderURLTitle = getPreferredKBFolderURLTitle(
+			portalPreferences, contentRootPrefix);
 
 		long childKbFolderId = KBFolderConstants.DEFAULT_PARENT_FOLDER_ID;
 
-		if (kbFolderUrlTitle == null) {
+		if (kbFolderURLTitle == null) {
 			List<KBFolder> kbFolders = getAlternateRootKBFolders(
 				groupId, kbFolderId);
 
@@ -589,10 +669,12 @@ public class KnowledgeBaseUtil {
 			}
 		}
 		else {
-			KBFolder kbFolder = KBFolderServiceUtil.getKBFolderByUrlTitle(
-				groupId, kbFolderId, kbFolderUrlTitle);
+			KBFolder kbFolder = KBFolderServiceUtil.fetchKBFolderByUrlTitle(
+				groupId, kbFolderId, kbFolderURLTitle);
 
-			childKbFolderId = kbFolder.getKbFolderId();
+			if (kbFolder != null) {
+				childKbFolderId = kbFolder.getKbFolderId();
+			}
 		}
 
 		return childKbFolderId;

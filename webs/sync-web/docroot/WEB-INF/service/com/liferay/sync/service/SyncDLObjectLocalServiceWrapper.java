@@ -314,6 +314,13 @@ public class SyncDLObjectLocalServiceWrapper implements SyncDLObjectLocalService
 	}
 
 	@Override
+	public com.liferay.sync.model.SyncDLObject fetchSyncDLObject(
+		java.lang.String type, long typePK)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _syncDLObjectLocalService.fetchSyncDLObject(type, typePK);
+	}
+
+	@Override
 	public long getLatestModifiedTime()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _syncDLObjectLocalService.getLatestModifiedTime();
