@@ -1,0 +1,130 @@
+<head>
+	<title>Intranet GFA  / Intranet DFG</title>
+	$theme.include($top_head_include)
+
+	<style type="text/css">
+
+		body.login {
+			text-align: center;
+			font-family: "Trebuchet MS", Arial, Verdana;
+			background-image: url(irudiak/fondo.jpg);
+			background-repeat:repeat-x;
+		}
+		#contenedor {
+			width: 700px;
+			height: 400px;
+			/*background-image: url('$images_folder/acceso/acceso.jpg');*/
+			background-repeat: no-repeat;
+			margin: auto;
+		}
+		.esker {
+			float: left;
+			width: 248px;
+			height: 63px;
+			margin-top: 10px;
+			margin-left: 15px;
+		}
+		
+		
+		
+		/*Solo para maximized*/
+		.column-1 .portlet > .portlet-content{
+			padding-top: 0;
+		}
+		
+		.portlet {
+			padding-top: 10px;
+		}
+		
+		
+		#formu {
+			width: 70%;
+			float: left;
+			/*padding-left: 30%;*/
+			margin-top: 30px;
+		}
+		
+		
+		body.login .main-content{
+			margin-left: 0px;
+		}
+		
+		body.login .portlet-topper{
+			display: none;
+		}
+		body.login .control-group{
+			margin-bottom: 0px;
+		}
+		
+		body.login .control-group label{
+			float: left;
+			width: 30%;
+		}
+
+		body.login label.checkbox input.field{
+			float:none;
+		}		
+		
+		body.login .button-holder {
+			margin: 0px;
+		}
+		
+		body.login .button-holder button{
+			border:none;
+		}
+		
+		body.login .navigation{
+			display:none;
+			background:none;
+		}
+		body.login div.portlet-body > .alert-error{
+			display:none;
+		}
+
+		/*Language*/
+		span.taglib-language-list-text{
+			color: #00aaff;
+			font-weight: bold;
+		}
+		
+		/*Logo*/
+		.login .logo{
+			position: relative;
+		}
+
+
+	</style>
+</head>
+		
+<body class="login">
+
+	<div class="lang-list">
+		$velocityPortletPreferences.setValue("displayStyle", "2")
+		$velocityPortletPreferences.setValue('portletSetupShowBorders', 'true')
+		$theme.runtime("82_INSTANCE_abce", "", $velocityPortletPreferences.toString())
+		$velocityPortletPreferences.reset() 
+	</div>
+	
+	
+
+	<div class="main-container container-fluid" id="content">
+		<div class="main-content">
+			
+			<div id="contenedor">
+				<div class="logo">
+					<a href="$home_url" class="navbar-brand">
+						<img src="$site_logo">
+					</a>
+				</div>
+				
+				<div id="formu">
+					#if ($themeDisplay.isStateMaximized())
+						$theme.wrapPortlet("portlet.vm", $content_include)
+					#else
+						$theme.runtime('58', '', '')
+					#end
+				</div>
+			</div>
+		</div>
+	</div>
+</body>			

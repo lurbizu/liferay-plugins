@@ -2,6 +2,9 @@
 <!DOCTYPE project>
 
 <project name="build-common" xmlns:antelope="antlib:ise.antelope.tasks" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<setproxy proxyhost="proxy.gipuzkoa.net" proxyport="8080"/>
+
 	<dirname file="${ant.file.build-common}" property="sdk.dir.native" />
 
 	<pathconvert property="sdk.dir" targetos="unix">

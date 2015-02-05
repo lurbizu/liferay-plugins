@@ -1,0 +1,30 @@
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element dataType="string" indexType="keyword" name="accordion" readOnly="false" repeatable="true" required="false" showLabel="true" type="text" width="small">
+		<dynamic-element dataType="html" fieldNamespace="ddm" indexType="keyword" name="content" readOnly="false" repeatable="false" required="false" showLabel="true" type="ddm-text-html" width="small">
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[content]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[accordion content]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<meta-data locale="en_US">
+			<entry name="label">
+				<![CDATA[accordion]]>
+			</entry>
+			<entry name="predefinedValue">
+				<![CDATA[accordion title]]>
+			</entry>
+			<entry name="tip">
+				<![CDATA[]]>
+			</entry>
+		</meta-data>
+	</dynamic-element>
+</root>

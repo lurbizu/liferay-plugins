@@ -1,0 +1,59 @@
+<h3 class="row-fluid header smaller lighter blue">
+	<span class="span7"> Accordion </span>
+
+	<span class="span5">
+		<span class="pull-right inline">
+			<span class="grey smaller-80 bolder">style:</span>
+
+			<span class="btn-toolbar inline middle no-margin">
+				<span id="accordion-style" data-toggle="buttons-radio" class="btn-group no-margin">
+					<button type="button" class="btn btn-small btn-yellow active">1</button>
+					<button type="button" class="btn btn-small btn-yellow">2</button>
+				</span>
+			</span>
+		</span>
+	</span>
+</h3>
+
+<div id="accordion2" class="accordion">
+	#foreach ($accordion in $accordion.getSiblings())
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a href="#collapseOne-$velocityCount" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle collapsed">
+					$accordion.data
+				</a>
+			</div>
+	
+			<div class="accordion-body collapse" id="collapseOne-$velocityCount">
+				<div class="accordion-inner">
+					$accordion.content.data
+				</div>
+			</div>
+		</div>
+	#end
+</div>
+
+<script type="text/javascript">
+	jQuery(function($) {
+		$('#accordion2').on('hide', function (e) {
+			$(e.target).prev().children(0).addClass('collapsed');
+		})
+		$('#accordion2').on('hidden', function (e) {
+			$(e.target).prev().children(0).addClass('collapsed');
+		})
+		$('#accordion2').on('show', function (e) {
+			$(e.target).prev().children(0).removeClass('collapsed');
+		})
+		$('#accordion2').on('shown', function (e) {
+			$(e.target).prev().children(0).removeClass('collapsed');
+		})
+		
+		$('#accordion-style').on('click', function(e){
+			var target = $(e.target);
+			var which = parseInt($.trim(target.text()));
+			if(which == 2) $('#accordion2').addClass('accordion-style2');
+			 else $('#accordion2').removeClass('accordion-style2');
+		});		
+	});
+</script>
+

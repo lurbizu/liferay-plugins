@@ -1,0 +1,23 @@
+<?xml version="1.0"?> 
+<root available-locales="en_US" default-locale="en_US"> 
+	<dynamic-element name="accordion" index="0" type="text" index-type="keyword"> 
+		<dynamic-element name="content" index="0" type="text_area" index-type="keyword"> 
+			<dynamic-content language-id="en_US"><![CDATA[Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.]]></dynamic-content>
+		</dynamic-element> 
+		<dynamic-content language-id="en_US"><![CDATA[Group Item #1]]></dynamic-content> 
+	</dynamic-element> 
+	
+	<dynamic-element name="accordion" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="content" index="0" type="text_area" index-type="keyword"> 
+			<dynamic-content language-id="en_US"><![CDATA[Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.]]></dynamic-content>
+		</dynamic-element> 
+		<dynamic-content language-id="en_US"><![CDATA[Group Item #2]]></dynamic-content> 
+	</dynamic-element> 
+	
+	<dynamic-element name="accordion" index="2" type="text" index-type="keyword"> 
+		<dynamic-element name="content" index="0" type="text_area" index-type="keyword"> 
+			<dynamic-content language-id="en_US"><![CDATA[Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.]]></dynamic-content> 
+		</dynamic-element> 
+		<dynamic-content language-id="en_US"><![CDATA[Group Item #3]]></dynamic-content> 
+	</dynamic-element> 
+</root>

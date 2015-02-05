@@ -1,0 +1,1 @@
+<%-- Hutsik erabiltzaile berria sortzeko aukera ez emateko --%>

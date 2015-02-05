@@ -1,0 +1,280 @@
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element dataType="string" indexType="keyword" name="progressBar" readOnly="false" repeatable="true" required="false" showLabel="true" type="text" width="small">
+		
+		<dynamic-element name="showPercent" dataType="boolean" indexType="keyword" readOnly="false" repeatable="false" required="false" showLabel="true" type="checkbox" width="">
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[showPercent]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[false]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element dataType="string" indexType="keyword" name="pieColor" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="small">
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[pieColor]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[#D15B47]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element name="typeBar" dataType="string" indexType="keyword" multiple="false"  readOnly="false" repeatable="false" required="false" showLabel="true" type="select" width="">
+			<dynamic-element name="option19147" type="option" value="pie">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[pie]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option19148" type="option" value="bar">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[bar]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[typeBar]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[[""]]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element  name="active" dataType="string" indexType="keyword" multiple="false" readOnly="false" repeatable="false" required="false" showLabel="true" type="select" width="">
+			<dynamic-element name="option19407" type="option" value="active">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[active]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option19408" type="option" value=" ">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[not active]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[active]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[[""]]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element name="striped"  dataType="string" indexType="keyword" multiple="false" readOnly="false" repeatable="false" required="false" showLabel="true" type="select" width="">
+			<dynamic-element name="option19667" type="option" value="progress-striped">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[striped]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option19668" type="option" value=" ">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[not striped]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[striped]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[[""]]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element name="width"  dataType="string" indexType="keyword" multiple="false" readOnly="false" repeatable="false" required="false" showLabel="true" type="select" width="">
+			<dynamic-element name="option19927" type="option" value="progress-small">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[small]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option19928" type="option" value="progress-mini">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[mini]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option19929" type="option" value=" ">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[default]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[width]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[[""]]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element name="color" dataType="string" indexType="keyword" multiple="false" readOnly="false" repeatable="false" required="false" showLabel="true" type="select" width="">
+			<dynamic-element name="option20188" type="option" value="progress-success">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[success]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20189" type="option" value="progress-warning">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[warning]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20190" type="option" value="progress-danger">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[danger]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20191" type="option" value="progress-purple">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[purple]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20192" type="option" value="progress-pink">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[pink]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20193" type="option" value="progress-yellow">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[yellow]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20194" type="option" value="progress-inverse">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[inverse]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[color]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[[""]]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element name="multiColorBar" dataType="boolean" indexType="keyword" readOnly="false" repeatable="false" required="false" showLabel="true" type="checkbox" width="">
+			<dynamic-element dataType="string" indexType="keyword" name="succesPercent" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="small">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[succesPercent]]>
+					</entry>
+					<entry name="predefinedValue">
+						<![CDATA[]]>
+					</entry>
+					<entry name="tip">
+						<![CDATA[]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element dataType="string" indexType="keyword" name="warningPercent" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="small">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[warningPercent]]>
+					</entry>
+					<entry name="predefinedValue">
+						<![CDATA[]]>
+					</entry>
+					<entry name="tip">
+						<![CDATA[]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element dataType="string" indexType="keyword" name="dangerPercent" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="small">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[dangerPercent]]>
+					</entry>
+					<entry name="predefinedValue">
+						<![CDATA[]]>
+					</entry>
+					<entry name="tip">
+						<![CDATA[]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[multiColorBar]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[false]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<meta-data locale="en_US">
+			<entry name="label">
+				<![CDATA[progressBar]]>
+			</entry>
+			<entry name="predefinedValue">
+				<![CDATA[50%]]>
+			</entry>
+			<entry name="tip">
+				<![CDATA[]]>
+			</entry>
+		</meta-data>
+	</dynamic-element>
+</root>

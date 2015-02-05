@@ -1,0 +1,294 @@
+	
+<div class="main-container-inner faq-content">	
+
+	<div class="main-content">
+		<div class="page-content">
+			<div class="page-header">
+				<h1>
+					FAQ
+					<small>
+						<i class="icon-double-angle-right"></i>
+						frequently asked questions using tabs and accordions
+					</small>
+				</h1>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="tabbable">
+						<ul class="nav nav-tabs padding-18 tab-size-bigger" id="myTab">
+							<li class="active">
+								<a data-toggle="tab" href="#faq-tab-1">
+									<i class="blue icon-question-sign bigger-120"></i>
+									General
+								</a>
+							</li>
+
+							<li>
+								<a data-toggle="tab" href="#faq-tab-2">
+									<i class="green icon-user bigger-120"></i>
+									Account
+								</a>
+							</li>
+
+							<li>
+								<a data-toggle="tab" href="#faq-tab-3">
+									<i class="orange icon-credit-card bigger-120"></i>
+									Payments
+								</a>
+							</li>
+
+							<li class="dropdown">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+									<i class="purple icon-magic bigger-120"></i>
+
+									Misc
+									<i class="icon-caret-down"></i>
+								</a>
+
+								<ul class="dropdown-menu dropdown-lighter dropdown-125">
+									<li>
+										<a data-toggle="tab" href="#faq-tab-4"> Affiliates </a>
+									</li>
+
+									<li>
+										<a data-toggle="tab" href="#faq-tab-4"> Merchants </a>
+									</li>
+								</ul>
+							</li><!-- /.dropdown -->
+						</ul>
+						
+						<div class="tab-content no-border padding-24">
+							<div id="faq-tab-1" class="tab-pane fade in active">
+								<h4 class="blue">
+									<i class="icon-ok bigger-110"></i>
+									General Questions
+								</h4>
+
+								<div class="space-8"></div>
+
+								<div id="faq-list-1" class="panel-group accordion-style1 accordion-style2">
+									#set( $questionRef = 0)
+									#foreach ($question in $Faq.questions.getSiblings())
+										#set( $questionRef = $questionRef+1)
+										
+										<div class="panel panel-default">	
+											#if($question.categories.data == 'General')
+												<div class="panel-heading">
+													<a href="#faq-1-$questionRef" data-parent="#faq-list-1" data-toggle="collapse" class="accordion-toggle collapsed">
+														<i class="icon-chevron-left pull-right" data-icon-hide="icon-chevron-down" data-icon-show="icon-chevron-left"></i>
+														<i class="$question.icon.data"></i>
+														$question.data
+													</a>
+												</div>
+
+												<div class="panel-collapse collapse" id="faq-1-$questionRef">
+													<div class="panel-body">
+														#if($question.answer.data != '')
+															$question.answer.data
+														#else								
+															<div id="faq-list-nested-1" class="panel-group accordion-style1 accordion-style2">
+																#set( $subQuestionsRef = 0)																
+																#foreach ($subQuestion in $question.answer.subQuestions.getSiblings())	
+																	#set( $subQuestionsRef = $subQuestionsRef+1)		
+																						
+																	<div class="panel panel-default">
+																		<div class="panel-heading">
+																			<a href="#faq-list-1-sub-$subQuestionsRef" data-parent="#faq-list-nested-1" data-toggle="collapse" class="accordion-toggle collapsed">
+																				<i class="icon-plus smaller-80 middle" data-icon-hide="icon-minus" data-icon-show="icon-plus"></i>
+																				$subQuestion.data
+																			</a>
+																		</div>
+																		<div class="panel-collapse collapse" id="faq-list-1-sub-$subQuestionsRef">
+																			<div class="panel-body">
+																				$subQuestion.subQuestionsAnswer.data
+																			</div>
+																		</div>
+																	</div>
+																#end
+															</div>
+														#end														
+													</div>
+												</div>
+											#end										
+										</div>
+									#end
+								</div>
+							</div>
+							
+							<div id="faq-tab-2" class="tab-pane fade">
+								<h4 class="blue">
+									<i class="green icon-user bigger-110"></i>
+									Account Questions
+								</h4>
+
+								<div class="space-8"></div>
+
+								<div id="faq-list-2" class="panel-group accordion-style1 accordion-style2">
+									#set( $questionRef = 0)
+									#foreach ($question in $Faq.questions.getSiblings())
+										#set( $questionRef = $questionRef+1)
+										
+										<div class="panel panel-default">										
+											#if($question.categories.data == 'Account')
+												<div class="panel-heading">
+													<a href="#faq-2-$questionRef" data-parent="#faq-list-2" data-toggle="collapse" class="accordion-toggle collapsed">
+														<i class="icon-chevron-right smaller-80" data-icon-hide="icon-chevron-down align-top" data-icon-show="icon-chevron-right"></i>
+														<i class="$question.icon.data"></i>
+														$question.data
+													</a>
+												</div>
+
+												<div class="panel-collapse collapse" id="faq-2-$questionRef">
+													<div class="panel-body">
+														#if($question.answer.data != '')
+															$question.answer.data
+														#else								
+															<div id="faq-list-nested-2" class="panel-group accordion-style1 accordion-style2">
+																#set( $subQuestionsRef = 0)																
+																#foreach ($subQuestion in $question.answer.subQuestions.getSiblings())	
+																	#set( $subQuestionsRef = $subQuestionsRef+1)		
+																						
+																	<div class="panel panel-default">
+																		<div class="panel-heading">
+																			<a href="#faq-list-2-sub-$subQuestionsRef" data-parent="#faq-list-nested-2" data-toggle="collapse" class="accordion-toggle collapsed">
+																				<i class="icon-plus smaller-80 middle" data-icon-hide="icon-minus" data-icon-show="icon-plus"></i>
+																				$subQuestion.data
+																			</a>
+																		</div>
+																		<div class="panel-collapse collapse" id="faq-list-2-sub-$subQuestionsRef">
+																			<div class="panel-body">
+																				$subQuestion.subQuestionsAnswer.data
+																			</div>
+																		</div>
+																	</div>
+																#end
+															</div>
+														#end														
+													</div>
+												</div>
+											#end										
+										</div>
+									#end
+								</div>
+							</div>
+
+							<div id="faq-tab-3" class="tab-pane fade">
+								<h4 class="blue">
+									<i class="orange icon-credit-card bigger-110"></i>
+									Payment Questions
+								</h4>
+
+								<div class="space-8"></div>
+
+								<div id="faq-list-3" class="panel-group accordion-style1 accordion-style2">
+									#set( $questionRef = 0)
+									#foreach ($question in $Faq.questions.getSiblings())
+										#set( $questionRef = $questionRef+1)
+										
+										<div class="panel panel-default">										
+											#if($question.categories.data == 'Payments')
+												<div class="panel-heading">
+													<a  href="#faq-3-$questionRef" data-parent="#faq-list-3" data-toggle="collapse" class="accordion-toggle collapsed">
+														<i class="$question.icon.data"></i>
+														$question.data
+													</a>
+												</div>
+
+												<div class="panel-collapse collapse" id="faq-3-$questionRef">
+													<div class="panel-body">
+														#if($question.answer.data != '')
+															$question.answer.data
+														#else								
+															<div id="faq-list-nested-3" class="panel-group accordion-style1 accordion-style2">
+																#set( $subQuestionsRef = 0)																
+																#foreach ($subQuestion in $question.answer.subQuestions.getSiblings())	
+																	#set( $subQuestionsRef = $subQuestionsRef+1)		
+																						
+																	<div class="panel panel-default">
+																		<div class="panel-heading">
+																			<a href="#faq-list-3-sub-$subQuestionsRef" data-parent="#faq-list-nested-3" data-toggle="collapse" class="accordion-toggle collapsed">
+																				<i class="icon-plus smaller-80 middle" data-icon-hide="icon-minus" data-icon-show="icon-plus"></i>
+																				$subQuestion.data
+																			</a>
+																		</div>
+																		<div class="panel-collapse collapse" id="faq-list-3-sub-$subQuestionsRef">
+																			<div class="panel-body">
+																				$subQuestion.subQuestionsAnswer.data
+																			</div>
+																		</div>
+																	</div>
+																#end
+															</div>
+														#end														
+													</div>
+												</div>
+											#end										
+										</div>
+									#end
+								</div>
+							</div>
+
+							<div id="faq-tab-4" class="tab-pane fade">
+								<h4 class="blue">
+									<i class="purple icon-magic bigger-110"></i>
+									Miscellaneous Questions
+								</h4>
+
+								<div class="space-8"></div>
+
+								<div id="faq-list-4" class="panel-group accordion-style1 accordion-style2">
+									#set( $questionRef = 0)
+									#foreach ($question in $Faq.questions.getSiblings())
+										#set( $questionRef = $questionRef+1)
+										
+										<div class="panel panel-default">										
+											#if($question.categories.data == 'Miscellaneous')
+												<div class="panel-heading">
+													<a  href="#faq-4-$questionRef" data-parent="#faq-list-4" data-toggle="collapse" class="accordion-toggle collapsed">
+														<i class="$question.icon.data"></i>
+														$question.data
+													</a>	
+												</div>
+
+												<div class="panel-collapse collapse" id="faq-4-$questionRef">
+													<div class="panel-body">
+														#if($question.answer.data != '')
+															$question.answer.data
+														#else								
+															<div id="faq-list-nested-4" class="panel-group accordion-style1 accordion-style2">
+																#set( $subQuestionsRef = 0)																
+																#foreach ($subQuestion in $question.answer.subQuestions.getSiblings())	
+																	#set( $subQuestionsRef = $subQuestionsRef+1)		
+																						
+																	<div class="panel panel-default">
+																		<div class="panel-heading">
+																			<a href="#faq-list-4-sub-$subQuestionsRef" data-parent="#faq-list-nested-4" data-toggle="collapse" class="accordion-toggle collapsed">
+																				<i class="icon-plus smaller-80 middle" data-icon-hide="icon-minus" data-icon-show="icon-plus"></i>
+																				$subQuestion.data
+																			</a>
+																		</div>
+																		<div class="panel-collapse collapse" id="faq-list-4-sub-$subQuestionsRef">
+																			<div class="panel-body">
+																				$subQuestion.subQuestionsAnswer.data
+																			</div>
+																		</div>
+																	</div>
+																#end
+															</div>
+														#end														
+													</div>
+												</div>
+											#end										
+										</div>
+									#end
+
+								</div>
+							</div>	
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

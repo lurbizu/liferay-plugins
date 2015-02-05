@@ -1,0 +1,38 @@
+	
+<div class="main-container-inner grid-content">				
+	<div class="main-content">	
+		<div class="page-content">
+			#foreach ($grid in $Grids.siblings)
+				<div class="page-header">
+					<h1>
+						Grid
+						<small>
+							<i class="icon-double-angle-right"></i>								
+							$grid.data								
+						</small>
+					</h1>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="center">
+							#foreach ($row in $grid.row.getSiblings())
+								<div class="row">
+									#foreach ($column in $row.column.getSiblings())
+										<div class="col-xs-12" style="width:$column.columnWidth.data">
+											<div class="center">
+												<span>$column.data</span>									
+											</div>
+										</div>
+									#end
+								</div>
+							#end
+						</div>
+					</div>
+				</div>
+			#end
+		</div>
+	</div>
+</div>			
+		
+		

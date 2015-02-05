@@ -1,0 +1,41 @@
+<div class="span8">
+	#foreach ($progressBar in $progressBar.getSiblings())
+			 
+		#if($progressBar.typeBar.data == 'bar')
+			
+			#if($progressBar.multiColorBar.data != 'true')	
+				#set($class="")
+				#set($class = $progressBar.active.data + " "+ $progressBar.striped.data + " " + $progressBar.width.data + " "+ $progressBar.color.data )
+						
+				#if($progressBar.showPercent.data == 'true')	
+					<div class="progress $class" data-percent="$progressBar.data">
+						<div class="bar" style="width:$progressBar.data;"></div>
+					</div>
+				#else			
+					<div class="progress $class">
+						<div class="bar" style="width:$progressBar.data;"></div>
+					</div>	
+				#end
+				
+			#else
+				<div class="progress">
+					<div class="bar bar-success" style="width: $progressBar.multiColorBar.succesPercent.data"></div>
+					<div class="bar bar-warning" style="width:  $progressBar.multiColorBar.warningPercent.data"></div>			
+					<div class="bar bar-danger" style="width:  $progressBar.multiColorBar.dangerPercent.data"></div>						
+				</div>	
+			#end
+		#end
+	#end
+</div>
+
+<div class="span4 center">
+	#foreach ($progressBar in $progressBar.getSiblings())			
+		#if($progressBar.typeBar.data == 'pie')	
+			<div class="easy-pie-chart percentage" data-percent="$progressBar.data" data-color="$progressBar.pieColor.data">
+				<span class="percent">$progressBar.data</span>
+				%
+			</div>
+			<hr />
+		#end
+	#end
+</div>

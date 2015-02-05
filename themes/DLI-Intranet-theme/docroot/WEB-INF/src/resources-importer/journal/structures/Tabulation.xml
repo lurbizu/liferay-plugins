@@ -1,0 +1,119 @@
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element dataType="string" indexType="keyword" name="tabulation" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="small">
+		<dynamic-element dataType="string" indexType="keyword" multiple="false" name="position" readOnly="false" repeatable="false" required="false" showLabel="true" type="select" width="">
+			<dynamic-element name="option20763" type="option" value="top">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[top]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20764" type="option" value="left">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[left]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<dynamic-element name="option20765" type="option" value="below">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[below]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[position]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[[""]]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<dynamic-element dataType="html" fieldNamespace="ddm" indexType="keyword" name="page" readOnly="false" repeatable="true" required="false" showLabel="true" type="ddm-text-html" width="small">
+			<dynamic-element dataType="html" fieldNamespace="ddm" indexType="keyword" name="content" readOnly="false" repeatable="false" required="false" showLabel="true" type="ddm-text-html" width="small">
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[content]]>
+					</entry>
+					<entry name="predefinedValue">
+						<![CDATA[]]>
+					</entry>
+					<entry name="tip">
+						<![CDATA[]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			
+			<dynamic-element dataType="string" indexType="keyword" name="subMenu" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="small">
+				<dynamic-element dataType="string" indexType="keyword" name="menu" readOnly="false" repeatable="true" required="false" showLabel="true" type="text" width="small">
+					<dynamic-element dataType="html" fieldNamespace="ddm" indexType="keyword" name="menuContent" readOnly="false" repeatable="false" required="false" showLabel="true" type="ddm-text-html" width="small">
+						<meta-data locale="en_US">
+							<entry name="label">
+								<![CDATA[menuContent]]>
+							</entry>
+							<entry name="predefinedValue">
+								<![CDATA[]]>
+							</entry>
+							<entry name="tip">
+								<![CDATA[]]>
+							</entry>
+						</meta-data>
+					</dynamic-element>
+					<meta-data locale="en_US">
+						<entry name="label">
+							<![CDATA[menu]]>
+						</entry>
+						<entry name="predefinedValue">
+							<![CDATA[]]>
+						</entry>
+						<entry name="tip">
+							<![CDATA[]]>
+						</entry>
+					</meta-data>
+				</dynamic-element>
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[subMenu]]>
+					</entry>
+					<entry name="predefinedValue">
+						<![CDATA[]]>
+					</entry>
+					<entry name="tip">
+						<![CDATA[]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[page]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[<i class="green icon-home bigger-110"></i> Home]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<meta-data locale="en_US">
+			<entry name="label">
+				<![CDATA[tabulation]]>
+			</entry>
+			<entry name="predefinedValue">
+				<![CDATA[]]>
+			</entry>
+			<entry name="tip">
+				<![CDATA[]]>
+			</entry>
+		</meta-data>
+	</dynamic-element>
+</root>

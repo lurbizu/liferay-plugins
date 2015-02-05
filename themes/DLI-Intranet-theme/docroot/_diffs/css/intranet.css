@@ -1,0 +1,194 @@
+.aui .spaced > li:before {
+    content: "\00BB\0020";
+    color: #0077B3;
+}
+
+.aui .unstyled > li:before {
+    content: "";
+}
+
+
+.aui .spaced > li {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    list-style: none;
+}
+
+.aui div.head-bar {
+	background-color: #438eb9;
+	height: 47px;
+}
+
+	.aui .skin-dark div.head-bar {
+		background:#2C6AA0;
+	}
+	.aui .skin-purple div.head-bar {
+		background:#C6487E;
+	}
+	.aui .skin-gray div.head-bar {
+		background:#393939;
+	}
+
+.aui .hr {
+display: block;
+height: 0px;
+overflow: hidden;
+font-size: 0;
+border-top: 1px solid #CCC;
+border-bottom: 1px solid #CCC;
+margin: 12px 0;
+}
+
+
+#breadcrumbs{
+	background-color: #FFFFFF;
+}
+
+
+.nav-account-controls .user-avatar .dropdown-menu .lang-list a{
+	margin-left: 30px;
+	padding-left: 15px;
+	background-image: url("../images/arrows/10_right.png");
+	background-size: 5px;
+	background-repeat: no-repeat;
+	background-position: 9px;
+	
+}
+
+.dockbar-item .lang-list {
+	padding: 10px 6px;
+	text-transform: lowercase;
+}
+
+.dockbar-item .lang-list a{
+	color: #ffffff;
+	padding: 0 6px 0 0;
+}
+
+.aui .navbar .nav > li > a {
+	padding: 8px 15px 8px;
+}
+
+span.taglib-language-list-text {
+	font-weight: bold;
+	color: #fff;
+	padding: 0 6px 0 0;
+}
+
+.aui .dockbar-user-notifications{
+	background: #2C6AA0;
+} 
+
+.aui .dropdown-submenu > .dropdown-menu {
+	width: 100%;
+}
+
+div.main-content div.mega-menu{
+	background-color: #F0F0F0;
+}
+
+.aui a{
+	color: #12718f;
+}
+
+.aui .tags {
+	border: none;
+	width: 100%;
+}
+
+.aui .tags .tag{
+	background-color: #ffffff;
+	color: #12718f;
+	padding: 2px 5px 2px 20px;
+}
+
+
+/*Posicionamiento del logo*/
+.logo-container {
+    position: relative;
+    height: 44px;
+	width: 190px;
+	float: left;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align:center; /* Align center inline elements */
+    font: 0/0 a;
+}
+
+.logo:before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.logo img {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.dockbar-container {
+	margin-left: 189px;
+}
+/*FIN Posicionamiento del logo*/
+
+/* Iñigo */
+li.last {
+    font-size: 18px;
+    font-weight: lighter;
+}
+/*   */
+
+.aui .breadcrumbs .nav-search {
+ right: 0px;
+}
+
+.aui dd {
+margin: 10px 10px 10px 40px;
+}
+
+
+/*Buscador*/
+.portlet-boundary_DLF_Bilatzailea_WAR_DLFBilatzaileaportlet_ .searchcontainer-content table {
+	border:none;
+}
+
+div.columns-1-2-1 .row-fluid{
+display:table;
+}
+
+.aui div.head-bar{
+height: auto;
+}
+
+.aui .accordion-heading .accordion-toggle.collapsed:after {
+content: "\f107";
+}
+
+.aui .widget-main.no-padding .table-bordered th:first-child, .aui .widget-main.padding-0 .table-bordered th:first-child, .aui .widget-main.no-padding .table-bordered td:first-child, .aui .widget-main.padding-0 .table-bordered td:first-child {
+text-align: left;
+}
+
+.aui .table th, .aui .table td {
+text-align: center;
+}
+
+.aui .sidebar .submenu span.menu-text {
+padding-left: 0px;
+}
+
+/* foro */
+
+.portlet-asset-publisher .thread-view-controls, .portlet-message-boards .thread-view-controls, .portlet-trash .thread-view-controls {
+display: none;
+}
+
+.portlet-asset-publisher .message-container .user-info, .portlet-message-boards .message-container .user-info, .portlet-trash .message-container .user-info {
+display: none;
+}

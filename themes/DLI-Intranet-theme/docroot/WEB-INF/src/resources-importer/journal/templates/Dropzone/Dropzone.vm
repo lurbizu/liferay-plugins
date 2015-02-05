@@ -1,0 +1,20 @@
+## get the ThemeDisplay object 
+#set ($serviceContext = $portal.getClass().forName("com.liferay.portal.service.ServiceContextThreadLocal").getServiceContext())
+#set ($httpServletRequest = $serviceContext.getRequest())
+##get the layout object
+#set ($objLayout = $httpServletRequest.getAttribute("LAYOUT"))
+
+#set ($plid = $objLayout.plid)
+
+#set ($upload_file_url = $portletURLFactory.create($httpServletRequest, "20", $plid, "RENDER_PHASE"))
+$upload_file_url.setWindowState("exclusive")
+$upload_file_url.setPortletMode("view")
+$upload_file_url.setParameter("saveLastPath", "0")
+$upload_file_url.setParameter("repositoryId", "$repository_id.getData()")
+$upload_file_url.setParameter("folderId", "$folder_id.getData()")
+$upload_file_url.setParameter("struts_action", "/document_library/upload_multiple_file_entries")
+
+<div id="file_upload"></div>
+<script>
+$( "#file_upload" ).load( "$upload_file_url");
+		  </script>

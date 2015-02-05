@@ -1,0 +1,467 @@
+{
+	"layouts": [
+		{
+			"columns": [
+				[		
+					"dashboard.html"
+				]
+			],
+			"friendlyURL": "/Dashboard",
+			"layoutTemplateId": "1_column",
+			"name": "Dashboard",
+			"title": "Dashboard",
+			"class": "icon-dashboard"	
+		},
+		{
+			"columns": [
+				[
+					"typography.html"					
+				]
+			],
+			"friendlyURL": "/Typography",
+			"layoutTemplateId": "1_column",
+			"name": "Typography",
+			"title": "Typography",
+			"class": "icon-text-width"	
+		},
+		{
+			"columns": [
+				[		
+					"elements.html"			
+				]
+			],
+			"layouts": [
+				{
+					"columns": [				
+						[		
+							"elements.html"					
+						]
+					],
+					"friendlyURL": "/Elements",
+					"layoutTemplateId": "1_column",
+					"name": "Elements",
+					"title": "Elements",
+					"class": "icon-double-angle-righ"	
+				},
+				{
+					"columns": [				
+						[	
+							"buttons.html"						
+						]
+					],
+					"friendlyURL": "/Buttons",
+					"layoutTemplateId": "1_column",
+					"name": "Buttons & Icons",
+					"title": "Buttons & Icons",
+					"class": "icon-double-angle-righ"	
+				},
+				{
+					"columns": [				
+						[			
+							"treeview.html"				
+						]
+					],
+					"friendlyURL": "/Treeview",
+					"layoutTemplateId": "1_column",
+					"name": "Treeview",
+					"title": "Treeview",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"jquery-ui.html"							
+						]
+					],
+					"friendlyURL": "/jQueryUI",
+					"layoutTemplateId": "1_column",
+					"name": "jQuery UI",
+					"title": "jQuery UI",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[	
+							"nestable-list.html"					
+						]
+					],
+					"friendlyURL": "/NestableLists",
+					"layoutTemplateId": "1_column",
+					"name": "Nestable Lists",
+					"title": "Nestable Lists",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[							
+						]
+					],
+					"layouts": [
+						{
+							"columns": [				
+								[
+								]
+							],
+							"friendlyURL": "/#",
+							"layoutTemplateId": "1_column",
+							"name": "Item #1",
+							"title": "Item #1",
+							"class": "icon-leaf"
+						},
+						{
+							"columns": [				
+									[
+									]
+								],
+								"layouts": [
+									{
+										"columns": [				
+											[
+											]
+										],
+										"friendlyURL": "/AddProduct",
+										"layoutTemplateId": "1_column",
+										"name": "Add Product",
+										"title": "Add Product",
+										"class": "icon-plus"
+									},
+									{
+										"columns": [				
+											[
+											]
+										],
+										"friendlyURL": "/ViewProducts",
+										"layoutTemplateId": "1_column",
+										"name": "View Products",
+										"title": "View Products",
+										"class": "icon-eye-open"
+									}
+							],
+							"friendlyURL": "/Product",
+							"layoutTemplateId": "1_column",
+							"name": "4th level",
+							"title": "4th level",
+							"class": "icon-pencil"
+						}
+					],
+					"friendlyURL": "/ThreeLevel",
+					"layoutTemplateId": "1_column",
+					"name": "Three Level Menu",
+					"title": "Three Level Menu",
+					"class": "icon-double-angle-right"	
+				}
+			],
+			"friendlyURL": "/UIElements",
+			"layoutTemplateId": "1_column",
+			"name": "UI Elements",
+			"title": "UI Elements",
+			"class": "icon-desktop"	
+		},
+		{
+			"columns": [
+				[					
+				]
+			],
+			"layouts": [
+				{
+					"columns": [				
+						[
+							"tables.html"
+						]
+					],
+					"friendlyURL": "/tables",
+					"layoutTemplateId": "1_column",
+					"name": "Simple & Dynamic",
+					"title": "Simple & Dynamic",
+					"class": "icon-double-angle-right"
+				},
+				{
+					"columns": [				
+						[
+							"jqgrid.html"
+						]
+					],
+					"friendlyURL": "/jqgrid",
+					"layoutTemplateId": "1_column",
+					"name": "jqGrid plugin",
+					"title": "jqGrid plugin",
+					"class": "icon-double-angle-right"
+				}
+			],
+			"friendlyURL": "/table",
+			"layoutTemplateId": "1_column",
+			"name": "Tables",
+			"title": "Tables",
+			"class": "icon-list"	
+		},
+		{
+			"columns": [
+				[			
+				]
+			],
+			"layouts": [
+				{
+					"columns": [				
+						[
+							"form-elements.html"
+						]
+					],
+					"friendlyURL": "/FormElements",
+					"layoutTemplateId": "1_column",
+					"name": "Form Elements",
+					"title": "Form Elements",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"form-wizard.html"
+						]
+					],
+					"friendlyURL": "/formWizard",
+					"layoutTemplateId": "1_column",
+					"name": "Wizard & Validation",
+					"title": "Wizard & Validation",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"wysiwyg.html"
+						]
+					],
+					"friendlyURL": "/wysiwyg",
+					"layoutTemplateId": "1_column",
+					"name": "Wysiwyg & Markdown",
+					"title": "Wysiwyg & Markdown",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [
+						[			
+							"dropzone.xml"		
+						]
+					],
+					"friendlyURL": "/dropzone",
+					"layoutTemplateId": "1_column",
+					"name": "Dropzone File Upload",
+					"title": "Dropzone File Upload",
+					"class": "icon-double-angle-right"	
+				}
+			],
+			"friendlyURL": "/Forms",
+			"layoutTemplateId": "1_column",
+			"name": "Forms",
+			"title": "Forms",
+			"class": "icon-edit"	
+		},
+		{
+			"columns": [
+				[		
+					"widgets.html"			
+				]
+			],
+			"friendlyURL": "/Widgets",
+			"layoutTemplateId": "1_column",
+			"name": "Widgets",
+			"title": "Widgets",
+			"class": "icon-list-alt"	
+		},
+		{
+			"columns": [
+				[			
+					{
+						"portletId": "1_WAR_calendarportlet"
+					}	
+				]
+			],
+			"friendlyURL": "/Calendar",
+			"layoutTemplateId": "1_column",
+			"name": "Calendar",
+			"title": "Calendar",
+			"class": "icon-calendar"	
+		},
+		{
+			"columns": [
+				[
+					"gallery.html"					
+				]
+			],
+			"friendlyURL": "/Gallery",
+			"layoutTemplateId": "1_column",
+			"name": "Gallery",
+			"title": "Gallery",
+			"class": "icon-picture"	
+		},
+	    {
+			"columns": [
+				[
+					{
+						"portletId": "31",				
+					},				
+				]
+			],
+			"friendlyURL": "/mediagallery",
+			"layoutTemplateId": "1_column",
+			"name": "Media Gallery",
+			"title": "Media Gallery",
+			"class": "icon-picture"	
+		},
+		{
+			"columns": [
+				[					
+				]
+			],
+			"layouts": [
+				{
+					"columns": [				
+						[
+							"profile.html"
+						]
+					],
+					"friendlyURL": "/profile",
+					"layoutTemplateId": "1_column",
+					"name": "User Profile",
+					"title": "User Profile",
+					"class": "icon-double-angle-right"
+				},
+				{
+					"columns": [				
+						[
+							"inbox.html"
+						]
+					],
+					"friendlyURL": "/Inbox",
+					"layoutTemplateId": "1_column",
+					"name": "Inbox",
+					"title": "Inbox",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"pricing.html"
+						]
+					],
+					"friendlyURL": "/Pricing",
+					"layoutTemplateId": "1_column",
+					"name": "Pricing Tables",
+					"title": "Pricing Tables",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"invoice.html"
+						]
+					],
+					"friendlyURL": "/Invoice",
+					"layoutTemplateId": "1_column",
+					"name": "Invoice",
+					"title": "Invoice",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"timeline.html"
+						]
+					],
+					"friendlyURL": "/Timeline",
+					"layoutTemplateId": "1_column",
+					"name": "Timeline",
+					"title": "Timeline",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+						]
+					],
+					"friendlyURL": "/Login",
+					"layoutTemplateId": "1_column",
+					"name": "Login & Register",
+					"title": "Login & Register",
+					"class": "icon-double-angle-right"	
+				}
+			],
+			"friendlyURL": "/morePages",
+			"layoutTemplateId": "1_column",
+			"name": "More Pages",
+			"title": "More Pages",
+			"class": "arrow icon-angle-down"	
+		},
+		{
+			"columns": [
+				[					
+				]
+			],
+			"layouts": [
+				{
+					"columns": [				
+						[
+							"Faq.xml"
+						]
+					],
+					"friendlyURL": "/FAQ",
+					"layoutTemplateId": "1_column",
+					"name": "FAQ",
+					"title": "FAQ",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"404.html"
+						]
+					],
+					"friendlyURL": "/error-404",
+					"layoutTemplateId": "1_column",
+					"name": "Error 404",
+					"title": "Error 404",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"500.html"
+						]
+					],
+					"friendlyURL": "/error-500",
+					"layoutTemplateId": "1_column",
+					"name": "Error 500",
+					"title": "Error 500",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+							"Grid.xml"
+						]
+					],
+					"friendlyURL": "/Grid",
+					"layoutTemplateId": "1_column",
+					"name": "Grid",
+					"title": "Grid",
+					"class": "icon-double-angle-right"	
+				},
+				{
+					"columns": [				
+						[
+						]
+					],
+					"friendlyURL": "/Blank",
+					"layoutTemplateId": "1_column",
+					"name": "Blank Page",
+					"title": "Blank Page",
+					"class": "icon-double-angle-right"	
+				}
+			],
+			"friendlyURL": "/otherPages",
+			"layoutTemplateId": "1_column",
+			"name": "Other Pages",
+			"title": "Other Pages",
+			"class": "icon-file-alt"	
+		}
+	]
+}

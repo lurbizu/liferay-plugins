@@ -1,0 +1,57 @@
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element dataType="string" indexType="keyword" name="Grids" readOnly="false" repeatable="true" required="false" showLabel="true" type="text" width="small">
+		
+		<dynamic-element dataType="string" indexType="keyword" name="row" readOnly="false" repeatable="true" required="false" showLabel="true" type="text" width="small">
+			<dynamic-element dataType="string" indexType="keyword" name="column" readOnly="false" repeatable="true" required="false" showLabel="true" type="text" width="small">
+				<dynamic-element dataType="string" indexType="keyword" name="columnWidth" readOnly="false" repeatable="false" required="false" showLabel="true" type="text" width="small">
+					<meta-data locale="en_US">
+						<entry name="label">
+							<![CDATA[columnWidth]]>
+						</entry>
+						<entry name="predefinedValue">
+							<![CDATA[]]>
+						</entry>
+						<entry name="tip">
+							<![CDATA[]]>
+						</entry>
+					</meta-data>
+				</dynamic-element>
+				<meta-data locale="en_US">
+					<entry name="label">
+						<![CDATA[column]]>
+					</entry>
+					<entry name="predefinedValue">
+						<![CDATA[]]>
+					</entry>
+					<entry name="tip">
+						<![CDATA[]]>
+					</entry>
+				</meta-data>
+			</dynamic-element>
+			<meta-data locale="en_US">
+				<entry name="label">
+					<![CDATA[row]]>
+				</entry>
+				<entry name="predefinedValue">
+					<![CDATA[]]>
+				</entry>
+				<entry name="tip">
+					<![CDATA[]]>
+				</entry>
+			</meta-data>
+		</dynamic-element>
+		
+		<meta-data locale="en_US">
+			<entry name="label">
+				<![CDATA[Grids]]>
+			</entry>
+			<entry name="predefinedValue">
+				<![CDATA[]]>
+			</entry>
+			<entry name="tip">
+				<![CDATA[]]>
+			</entry>
+		</meta-data>
+	</dynamic-element>
+</root>

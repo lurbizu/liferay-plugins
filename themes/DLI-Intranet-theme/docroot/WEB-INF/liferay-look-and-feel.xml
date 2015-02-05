@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>6.2.0+</version>
+	</compatibility>
+	<theme id="DLI-Intranet" name="DLI Intranet" >
+		<settings>
+			<setting configurable="true" key="header-menu" type="text" value="HEADERMENU"></setting>
+			<setting configurable="true" key="side-bar-shortcut" type="text" value="SIDEBARSHORTCUT"></setting>
+			<setting configurable="true" key="search-box-content" type="text" value="SEARCHBOX"></setting>
+			<setting configurable="true" key="is-login-page" type="select" options="yes,no" value="no"></setting>
+			<setting configurable="true" key="login-page-logo-url" type="text" value="#"></setting>
+			<setting configurable="true" key="footer-web-content-id" type="text" value=""></setting>
+			<setting configurable="true" key="portlet-setup-show-borders-default" value="false"></setting>
+			<setting configurable="true" key="show-language-choice" type="checkbox" value="false"></setting>
+			<setting configurable="true" key="display-footer" type="checkbox" value="true"></setting>
+			<setting configurable="true" key="footer-section-1-article-id" type="text" value="FOOTER"></setting>
+
+		</settings>
+		<color-scheme id="01" name="default">
+			<css-class></css-class>
+		   <color-scheme-images-path>${images-path}/color_schemes/skin-default</color-scheme-images-path> 
+		</color-scheme>
+		
+		<color-scheme id="02" name="dark">
+			<css-class>skin-dark</css-class>
+			<color-scheme-images-path>${images-path}/color_schemes/skin-dark</color-scheme-images-path> 
+		</color-scheme>
+
+		<color-scheme id="03" name="purple">
+			<css-class>skin-purple</css-class>
+			<color-scheme-images-path>${images-path}/color_schemes/skin-purple</color-scheme-images-path>
+		</color-scheme>
+
+		<color-scheme id="04" name="gray">
+			<css-class>skin-gray</css-class>
+		  <color-scheme-images-path>${images-path}/color_schemes/skin-gray</color-scheme-images-path> 
+		</color-scheme>
+		
+		<layout-templates>
+			<custom>
+				<layout-template id="element_layout" name="element_layout">
+					<template-path>/layouttpl/custom/element_layout/element_layout.tpl</template-path>
+					<wap-template-path>/layouttpl/custom/element_layout/element_layout.tpl</wap-template-path>
+					<thumbnail-path>/layouttpl/custom/element_layout/element_layout.png</thumbnail-path>
+				</layout-template>
+			</custom>
+		</layout-templates>
+	</theme>	
+</look-and-feel>

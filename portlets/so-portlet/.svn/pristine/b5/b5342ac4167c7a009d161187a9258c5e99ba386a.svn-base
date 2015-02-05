@@ -1,0 +1,286 @@
+.so-portlet-activities {
+  display: block;
+  width: 100%; }
+  .so-portlet-activities .activity-item {
+    border-bottom: 1px solid #e7e7e7;
+    min-height: 45px;
+    padding: 1em;
+    position: relative; }
+    .so-portlet-activities .activity-item .control-group {
+      margin-bottom: 0;
+      margin-left: 35px;
+      padding: 0 5px; }
+      .so-portlet-activities .activity-item .control-group input {
+        display: block;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        text-indent: 0.5em;
+        width: 100%; }
+  .so-portlet-activities .user-portrait {
+    float: left;
+    left: 1em;
+    margin-bottom: .4em;
+    max-height: 45px;
+    position: absolute;
+    top: 1em;
+    width: 45px; }
+    .so-portlet-activities .user-portrait .avatar {
+      display: block;
+      max-height: 45px;
+      overflow: hidden; }
+      .so-portlet-activities .user-portrait .avatar img {
+        max-width: 45px; }
+  .so-portlet-activities .activity-action, .so-portlet-activities .activity-block, .so-portlet-activities .activity-header {
+    margin-left: 55px;
+    word-wrap: break-word; }
+  .so-portlet-activities .activity-header {
+    margin-bottom: 0.4em; }
+    .so-portlet-activities .activity-header a {
+      font-weight: bold; }
+  .so-portlet-activities .activity-user-name {
+    float: left; }
+  .so-portlet-activities .activity-time {
+    color: #999;
+    float: right;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    margin-left: 1em; }
+  .so-portlet-activities .activity-action {
+    clear: both;
+    color: #333333;
+    margin-bottom: 0.8em; }
+  .so-portlet-activities .activity-block {
+    overflow: hidden; }
+  .so-portlet-activities .activity-body, .so-portlet-activities .grouped-activity-body-container {
+    border: 1px solid #e7e7e7;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto; }
+    .so-portlet-activities .activity-body span, .so-portlet-activities .grouped-activity-body-container span {
+      line-height: 1em;
+      padding-right: 10px;
+      vertical-align: middle; }
+    .so-portlet-activities .activity-body .icon, .so-portlet-activities .grouped-activity-body-container .icon {
+      height: 16px;
+      width: 16px; }
+    .so-portlet-activities .activity-body .title, .so-portlet-activities .grouped-activity-body-container .title {
+      border-right-width: 0;
+      display: block;
+      font-weight: bold;
+      overflow: hidden;
+      padding-bottom: 0.4em; }
+      .so-portlet-activities .activity-body .title .event-title, .so-portlet-activities .grouped-activity-body-container .title .event-title {
+        float: left;
+        line-height: 1.5em; }
+      .so-portlet-activities .activity-body .title .date, .so-portlet-activities .grouped-activity-body-container .title .date {
+        float: right;
+        line-height: 1.5em;
+        padding-right: 0; }
+  .so-portlet-activities .activity-body {
+    padding: 0.6em 0.9em; }
+    .so-portlet-activities .activity-body.document {
+      min-height: 75px;
+      padding: 0;
+      position: relative; }
+      .so-portlet-activities .activity-body.document .document-thumbnail {
+        left: 0;
+        overflow: hidden;
+        padding-right: 0;
+        position: absolute;
+        width: 75px; }
+        .so-portlet-activities .activity-body.document .document-thumbnail img {
+          display: block;
+          height: 75px;
+          margin: auto;
+          max-width: none; }
+      .so-portlet-activities .activity-body.document .document-container {
+        margin: 0.6em 0.9em 0.6em 85px; }
+      .so-portlet-activities .activity-body.document .title {
+        float: left; }
+      .so-portlet-activities .activity-body.document .version {
+        color: #8F0920;
+        float: right; }
+      .so-portlet-activities .activity-body.document .document-content {
+        clear: both; }
+  .so-portlet-activities .grouped-activity-body-container {
+    max-height: 107px;
+    overflow: hidden; }
+    .so-portlet-activities .grouped-activity-body-container .activity-subentry {
+      border-bottom: 1px solid #e7e7e7;
+      height: 2.5em;
+      overflow: hidden;
+      padding: 0 0.9em; }
+      .so-portlet-activities .grouped-activity-body-container .activity-subentry:last-child {
+        border-bottom-width: 0; }
+      .so-portlet-activities .grouped-activity-body-container .activity-subentry.tasks {
+        height: auto;
+        padding: 0; }
+        .so-portlet-activities .grouped-activity-body-container .activity-subentry.tasks .activity-body {
+          border-width: 0;
+          margin: 0; }
+    .so-portlet-activities .grouped-activity-body-container .activity-subentry-body, .so-portlet-activities .grouped-activity-body-container .activity-subentry-title {
+      display: inline;
+      line-height: 2.5em;
+      overflow: hidden; }
+  .so-portlet-activities .microblogs-portlet-activity .activity-body {
+    overflow: hidden;
+    padding: 0; }
+    .so-portlet-activities .microblogs-portlet-activity .activity-body .user-portrait {
+      padding: 2px; }
+    .so-portlet-activities .microblogs-portlet-activity .activity-body .microblog-content {
+      display: block;
+      line-height: 1.5em;
+      padding: 0.75em 0.75em 0.75em 45px; }
+  .so-portlet-activities .portlet-document-library-activity .activity-subentry {
+    padding-right: 8em;
+    position: relative; }
+  .so-portlet-activities .portlet-document-library-activity .activity-subentry-link {
+    padding: 10px 0;
+    position: absolute;
+    right: 0;
+    top: 0; }
+  .so-portlet-activities .portlet-document-library-activity .icon-download:before {
+    margin-right: 4px; }
+  .so-portlet-activities .tasks-portlet-activity .activity-body-container.high {
+    border-left: 6px solid #B20000; }
+  .so-portlet-activities .tasks-portlet-activity .activity-body-container.low {
+    border-left: 6px solid #e7e7e7; }
+  .so-portlet-activities .tasks-portlet-activity .activity-body-container.normal {
+    border-left: 6px solid #008C00; }
+  .so-portlet-activities .tasks-portlet-activity .activity-body-container .activity-body {
+    border-left-width: 0;
+    padding: 0.3em 0.9em; }
+  .so-portlet-activities .tasks-portlet-activity .grouped-activity-body-container {
+    max-height: 149px; }
+  .so-portlet-activities .activity-footer-toolbar {
+    background: #EAEAEA;
+    padding: 0 1em; }
+    .so-portlet-activities .activity-footer-toolbar .action {
+      border-left: 1px solid #2571AD;
+      display: inline-block;
+      height: 16px;
+      line-height: 16px;
+      margin: .5em 0;
+      padding: 0 .6em 0 .8em;
+      vertical-align: middle; }
+      .so-portlet-activities .activity-footer-toolbar .action:first-child {
+        border-left-width: 0;
+        padding-left: 0; }
+    .so-portlet-activities .activity-footer-toolbar a {
+      font-size: 0.9em; }
+  .so-portlet-activities .comments-container .user-portrait, .so-portlet-activities .microblogs-portlet-activity .activity-body .user-portrait {
+    height: 32px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 32px; }
+    .so-portlet-activities .comments-container .user-portrait .avatar, .so-portlet-activities .microblogs-portlet-activity .activity-body .user-portrait .avatar {
+      height: 32px; }
+    .so-portlet-activities .comments-container .user-portrait img, .so-portlet-activities .microblogs-portlet-activity .activity-body .user-portrait img {
+      max-width: 32px; }
+  .so-portlet-activities .comments-container .user-portrait {
+    left: 2px;
+    position: absolute;
+    top: 2px; }
+  .so-portlet-activities .comments-container .control-group {
+    margin: 0 2px 0 34px;
+    padding: 0; }
+    .so-portlet-activities .comments-container .control-group .comment-form {
+      padding: 5px 0; }
+  .so-portlet-activities .comment-entry, .so-portlet-activities .comments-container .form {
+    background: #EAEAEA;
+    border-top: 1px solid #FFF;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 2px;
+    position: relative; }
+  .so-portlet-activities .comment-entry .comment-body, .so-portlet-activities .comment-entry .comment-info {
+    line-height: 1.3em;
+    margin-left: 36px; }
+    .so-portlet-activities .comment-entry .comment-body span, .so-portlet-activities .comment-entry .comment-info span {
+      margin-right: 0.5em; }
+  .so-portlet-activities .comment-entry .user-name {
+    font-weight: bold; }
+  .so-portlet-activities .comment-entry .post-date {
+    color: #999; }
+  .so-portlet-activities .comment-entry .comment-info {
+    margin-top: 2px; }
+  .so-portlet-activities .comment-form .field-content {
+    overflow: hidden; }
+  .so-portlet-activities .comment-form .field-element {
+    border: 1px solid #C7D0DA;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 3px #c9c9c9 inset;
+    -moz-box-shadow: 0 1px 3px #c9c9c9 inset;
+    box-shadow: 0 1px 3px #c9c9c9 inset;
+    display: block;
+    margin: 2px; }
+    .so-portlet-activities .comment-form .field-element:hover {
+      border-color: #2571AD; }
+    .so-portlet-activities .comment-form .field-element:focus {
+      outline-color: #E59700; }
+  .so-portlet-activities .comment-form .field-input-text {
+    border-width: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 5px 0;
+    text-indent: 5px;
+    width: 100%; }
+  .so-portlet-activities .toggler-content-collapsed .activity-footer-toolbar {
+    border-top: 1px solid #EFEFEF;
+    -webkit-box-shadow: 0 -1px 15px -5px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 -1px 15px -5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 -1px 15px -5px rgba(0, 0, 0, 0.8);
+    margin-top: -2px; }
+  .so-portlet-activities .loading-bar {
+    display: block;
+    background: transparent url(@theme_image_path@/aui/loading_indicator.gif) 45% center no-repeat;
+    font-style: italic;
+    height: 100px;
+    margin-left: 25px;
+    width: 100%; }
+  .so-portlet-activities .loading-bar.loaded {
+    display: none; }
+  .so-portlet-activities .manual-loader, .so-portlet-activities .no-activities {
+    padding: 10px;
+    text-align: center; }
+
+/* ---------- Internet explorer ---------- */
+.ie7 .so-portlet-activities .grouped-activity-body-container {
+  height: 107px;
+  max-height: none; }
+  .ie7 .so-portlet-activities .grouped-activity-body-container .activity-subentry-title {
+    float: left;
+    margin: 7px 0; }
+.ie7 .portlet-document-library-activity .grouped-activity-body-container {
+  position: relative; }
+.ie7 .tasks-portlet-activity .grouped-activity-body-container {
+  height: 126px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .so-portlet-activities .user-portrait {
+    left: 0;
+    position: relative;
+    top: 0; }
+  .so-portlet-activities .activity-user-name {
+    float: none; }
+  .so-portlet-activities .activity-time {
+    float: none;
+    margin: .4em 0 0; }
+  .so-portlet-activities .activity-block, .so-portlet-activities .activity-action {
+    float: left;
+    margin-left: 0;
+    width: 100%; }
+  .so-portlet-activities .activity-action {
+    margin-bottom: .4em; } }
+

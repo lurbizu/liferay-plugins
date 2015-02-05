@@ -1,0 +1,228 @@
+<?xml version="1.0"?> 
+<root available-locales="en_US" default-locale="en_US"> 
+<dynamic-element name="Grids" index="0" type="text" index-type="keyword"> 
+	<dynamic-element name="row" index="0" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[100%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-12]]></dynamic-content> 
+		</dynamic-element> 
+		<dynamic-content language-id="en_US"><![CDATA[1]]></dynamic-content> 
+	</dynamic-element> 
+
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[8.33333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-1]]></dynamic-content> 
+		</dynamic-element> 
+		<dynamic-element name="column" index="1" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[91.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-11]]></dynamic-content> 
+		</dynamic-element> 
+		<dynamic-content language-id="en_US"><![CDATA[2]]></dynamic-content> 
+	</dynamic-element>
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[16.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-6.col-sm-2]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[83.3333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-6.col-sm-10]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[50%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-12.col-lg-6]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[50%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-12.col-lg-6]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[4]]></dynamic-content> 
+	</dynamic-element>
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[33.3333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-4]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[66.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-8]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[41.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-5]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[58.3333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-7]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[50%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-6]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[50%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-6]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[58.3333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-7]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[41.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-5]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[66.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-8]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[33.3333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-4]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[75%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-9]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[25%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-3]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[83.3333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-10]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[16.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-2]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[91.6666%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-11]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[8.33333%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-1]]></dynamic-content> 
+		</dynamic-element> 
+		
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	
+	<dynamic-element name="row" index="1" type="text" index-type="keyword"> 
+		<dynamic-element name="column" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="columnWidth" index="0" type="text" index-type="keyword"> 
+				<dynamic-content language-id="en_US"><![CDATA[100%]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[.col-xs-12]]></dynamic-content> 
+		</dynamic-element> 
+		<dynamic-content language-id="en_US"><![CDATA[3]]></dynamic-content> 
+	</dynamic-element>
+	
+	 <dynamic-content language-id="en_US"><![CDATA[bootstrap grid sizing]]></dynamic-content> 
+ </dynamic-element>
+</root>

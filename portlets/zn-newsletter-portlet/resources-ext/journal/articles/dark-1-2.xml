@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<root available-locales="en_US" default-locale="en_US">
+	<dynamic-element instance-id="E4TritI2" name="mainTitle" type="text" index-type="">
+		<dynamic-content><![CDATA[Zylk.net certificada en calidad ISO 20000-1 para la gestión de servicios de soporte]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="Nsrnue5c" name="mainLink" type="text" index-type="">
+		<dynamic-content><![CDATA[http://www.zylk.net/es/web/guest/noticias]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="54z5XxJx" name="mainText" type="text_box" index-type="">
+		<dynamic-content><![CDATA[No hemos escrito durante un largo tiempo pero hemos estado trabajando duro y ahora estamos orgullosos de poder mostrar nuestro nuevo certificado ISO / IEC 20000-1:2011, en calidad de gestión de servicios TI relativos a la prestación de asistencia técnica, mantenimiento correctivo y evolutivo y garantías para las aplicaciones de software a medida y los sistemas de código abierto y los productos ofrecidos en nuestro portfoleo.]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="6B4lPtqo" name="mainImage" type="document_library" index-type="">
+		<dynamic-content><![CDATA[/image/journal/article?img_id=29747&t=1389620727621]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="4duRd96c" name="title1" type="text" index-type="">
+		<dynamic-content><![CDATA[Optimizaciones SEO para Liferay IV]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="f7DOMb9R" name="link1" type="text" index-type="">
+		<dynamic-content><![CDATA[http://www.zylk.net/es/web/guest/web-2-0/blog/-/blogs/optimizaciones-seo-para-liferay-iv]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="dC86zdoP" name="text1" type="text_box" index-type="">
+		<dynamic-content><![CDATA[Siguiendo con los temas de SEO para liferay explicados en anteriores post, vamos a explicar un pequeño tip que sin cambiar nada en liferay nos permitirá disponer urls amigables para los contenidos servidos por el journal. Como intorducción decir que existe un concepro de url amigable dentro del portal y que es bastante flexible y programable. La base de este modelo un mapeo entre parametros del portal y partes de la url. Por ejemplo para un articulo de contenido se puede crear una url con los siguientes elementos]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="XhwR9WqI" name="image1" type="document_library" index-type="">
+		<dynamic-content><![CDATA[/documents/10649/29719/heading.png/64b00f28-d1d8-4f3a-b878-9fb21bf5c09d?t=1389620645802]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="HUKyED8Y" name="title2" type="text" index-type="">
+		<dynamic-content><![CDATA[Content Links and Share Content with users in Alfresco Share]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="TNYUJo8R" name="link2" type="text" index-type="">
+		<dynamic-content><![CDATA[http://www.zylk.net/es/web/guest/web-2-0/blog/-/blogs/content-links-and-share-content-with-users-in-alfresco-share]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="1TlUt4Ae" name="text2" type="text_box" index-type="">
+		<dynamic-content><![CDATA[Recently, we implemented some probes of concept regarding associations in Alfresco ECMN, guidelined by the excellent blog post of Rui Fernandes Monteiro about associations in Alfresco. We also talk about the basics of this module in Alfresco Summit in Barcelona some weeks ago. I write here some guidelines of the module in preparation and testing.]]></dynamic-content>
+	</dynamic-element>
+	<dynamic-element instance-id="fTH9skGL" name="image2" type="document_library" index-type="">
+		<dynamic-content><![CDATA[/documents/10649/29719/logo.png/6cb33773-59e9-4818-b47b-2cb2a629a494?t=1389620646587]]></dynamic-content>
+	</dynamic-element>
+</root>

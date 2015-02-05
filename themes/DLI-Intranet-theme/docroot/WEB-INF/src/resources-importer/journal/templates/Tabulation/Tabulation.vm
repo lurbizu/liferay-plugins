@@ -1,0 +1,79 @@
+<div class="tabbable tabs-$tabulation.position.data">
+	#set ($randomId = $mathTool.random(1,100) )
+	
+	#if($tabulation.position.data == 'below')
+		<div class="tab-content">
+			#foreach ($page in $tabulation.page.getSiblings())
+				#if($page.subMenu.data == '')
+					#if($velocityCount == 1)
+						<div id="${randomId}tab$velocityCount" class="tab-pane in active">
+					#else
+						<div id="${randomId}tab$velocityCount" class="tab-pane">
+					#end
+						$page.content.data	
+					</div>
+				#else
+					#set ( $ref = 0)
+					#foreach ($menu in $page.subMenu.menu.getSiblings())
+						<div id="${randomId}dropdown$velocityCount-$ref" class="tab-pane">
+							$menu.menuContent.data
+						</div>
+					#end
+				#end
+			#end
+		</div>
+	#end
+	
+	<ul class="nav nav-tabs" id="myTab">
+		#foreach ($page in $tabulation.page.getSiblings())
+			#if($velocityCount == 1)
+				<li class="active">
+			#else
+				<li>
+			#end
+					#if($page.subMenu.data == '')
+						<a data-toggle="tab" href="#${randomId}tab$velocityCount">
+							$page.data						
+						</a>					
+					#else
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+							$page.data						
+						</a>
+
+						<ul class="dropdown-menu dropdown-info">
+							#set ( $ref = 0)
+							#foreach ($menu in $page.subMenu.menu.getSiblings())
+								#set ($ref = $ref+1)
+								<li>
+									<a data-toggle="tab" href="#${randomId}dropdown$velocityCount-$ref">$menu.data</a>
+								</li>	
+							#end		
+						</ul>
+					#end
+				</li>
+		#end
+	</ul>
+	
+	#if($tabulation.position.data != 'below')
+		<div class="tab-content">
+			#foreach ($page in $tabulation.page.getSiblings())
+				#if($page.subMenu.data == '')
+					#if($velocityCount == 1)
+						<div id="${randomId}tab$velocityCount" class="tab-pane in active">
+					#else
+						<div id="${randomId}tab$velocityCount" class="tab-pane">
+					#end
+						$page.content.data	
+					</div>
+				#else
+					#set ( $ref = 0)
+					#foreach ($menu in $page.subMenu.menu.getSiblings())
+						<div id="${randomId}dropdown$velocityCount-$ref" class="tab-pane">
+							$menu.menuContent.data
+						</div>
+					#end
+				#end
+			#end
+		</div>
+	#end
+</div>

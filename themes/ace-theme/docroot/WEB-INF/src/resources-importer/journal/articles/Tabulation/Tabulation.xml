@@ -1,0 +1,73 @@
+<?xml version="1.0"?> 
+<root available-locales="en_US" default-locale="en_US"> 
+	<dynamic-element name="tabulation" index="0" type="text" index-type="keyword"> 
+			<dynamic-element name="position" index="0" type="list" index-type="keyword">
+				 <dynamic-content language-id="en_US"><![CDATA[top]]></dynamic-content> 
+			 </dynamic-element> 
+		 	
+		 	<dynamic-element name="page" index="0" type="text_area" index-type="keyword"> 
+		 		<dynamic-element name="content" index="0" type="text_area" index-type="keyword"> 
+		 			<dynamic-content language-id="en_US"><![CDATA[Raw denim you probably haven't heard of them jean shorts Austin.</span>]]></dynamic-content> 
+	 			</dynamic-element> 
+	 			<dynamic-element name="subMenu" index="0" type="text" index-type="keyword"> 
+	 				<dynamic-element name="menu" index="0" type="text" index-type="keyword"> 
+	 					<dynamic-element name="menuContent" index="0" type="text_area" index-type="keyword"> 
+	 						<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+ 						</dynamic-element> 
+ 						<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+					</dynamic-element> 
+					
+					<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+				</dynamic-element> 
+				
+				<dynamic-content language-id="en_US"><![CDATA[<i class="green icon-home bigger-110"></i> Home]]></dynamic-content> 
+			</dynamic-element> 
+			
+			<dynamic-element name="page" index="1" type="text_area" index-type="keyword"> 
+				<dynamic-element name="content" index="0" type="text_area" index-type="keyword"> 
+					<dynamic-content language-id="en_US"><![CDATA[Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</span>]]></dynamic-content> 
+				</dynamic-element> 
+				
+				<dynamic-element name="subMenu" index="0" type="text" index-type="keyword"> 
+				
+					<dynamic-element name="menu" index="0" type="text" index-type="keyword"> 
+						<dynamic-element name="menuContent" index="0" type="text_area" index-type="keyword">
+							 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+						 </dynamic-element> 
+						 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+					 </dynamic-element> 
+					 
+					 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 	</dynamic-element> 
+			 	
+			 	<dynamic-content language-id="en_US"><![CDATA[Messages<span class="badge badge-important">4</span>]]></dynamic-content>
+		 	 </dynamic-element> 
+		 	 
+		 	 <dynamic-element name="page" index="2" type="text_area" index-type="keyword"> 
+		 	 	<dynamic-element name="content" index="0" type="text_area" index-type="keyword"> 
+		 	 		<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+	 	 		</dynamic-element> 
+	 	 		
+	 	 		<dynamic-element name="subMenu" index="0" type="text" index-type="keyword">
+	 	 		 	<dynamic-element name="menu" index="0" type="text" index-type="keyword"> 
+	 	 		 		<dynamic-element name="menuContent" index="0" type="text_area" index-type="keyword"> 
+	 	 		 			<dynamic-content language-id="en_US"><![CDATA[Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</span>]]></dynamic-content> 
+	 	 		 		</dynamic-element> 
+	 	 		 		<dynamic-content language-id="en_US"><![CDATA[@fat]]></dynamic-content> 
+	 	 		 	</dynamic-element> 
+	 	 		 
+		 	 		 <dynamic-element name="menu" index="1" type="text" index-type="keyword"> 
+			 	 		 <dynamic-element name="menuContent" index="0" type="text_area" index-type="keyword"> 
+				 	 		 <dynamic-content language-id="en_US"><![CDATA[Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</span>]]>	 </dynamic-content> 
+			 	 		 </dynamic-element> 
+		 	 		 <dynamic-content language-id="en_US"><![CDATA[@mdo]]></dynamic-content> 
+		 	 		 </dynamic-element> 
+	 	 		 	 <dynamic-content language-id="en_US"><![CDATA[2]]></dynamic-content> 
+	 	 		 </dynamic-element> 
+	 	 		 
+	 	 		 <dynamic-content language-id="en_US"><![CDATA[Dropdown <b class="caret"></b>]]></dynamic-content> 
+ 	 		 </dynamic-element> 
+ 	 		
+ 	 		 <dynamic-content language-id="en_US"><![CDATA[Tabulation]]></dynamic-content>
+	  </dynamic-element> 
+</root>

@@ -1,0 +1,465 @@
+<?xml version="1.0"?> 
+<root available-locales="en_US" default-locale="en_US"> 
+	 <dynamic-element name="progressBar" index="0" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="0" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element>
+		 
+		 <dynamic-element name="showPercent" index="0" type="boolean" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[true]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="typeBar" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="active" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="striped" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="width" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="color" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 		 
+		 <dynamic-element name="multiColorBar" index="0" type="boolean" index-type="keyword"> 
+		 	<dynamic-element name="succesPercent" index="0" type="text" index-type="keyword"> 
+				 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="0" type="text" index-type="keyword"> 
+			 	<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="0" type="text" index-type="keyword"> 
+			 	<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+		 	<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-content language-id="en_US"><![CDATA[66%]]></dynamic-content> 
+	 </dynamic-element> 
+	 
+	 <dynamic-element name="progressBar" index="1" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="1" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element>
+		 
+		 <dynamic-element name="showPercent" index="0" type="boolean" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[true]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="typeBar" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="active" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="striped" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[progress-striped]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="width" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="color" index="0" type="list" index-type="keyword"> 
+		 	<dynamic-content language-id="en_US"><![CDATA[progress-success]]></dynamic-content> 
+		 </dynamic-element> 
+		 
+		 <dynamic-element name="multiColorBar" index="0" type="boolean" index-type="keyword"> 
+		 	<dynamic-element name="succesPercent" index="0" type="text" index-type="keyword"> 
+		 		<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 	</dynamic-element> 
+			<dynamic-element name="warningPercent" index="0" type="text" index-type="keyword"> 
+				 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-element name="dangerPercent" index="0" type="text" index-type="keyword"> 
+			 	<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			</dynamic-element> 
+			<dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[25%]]></dynamic-content> 
+	 </dynamic-element> 
+	 
+	 <dynamic-element name="progressBar" index="2" type="text" index-type="keyword"> 
+	 	 <dynamic-element name="pieColor" index="2" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element>
+		 
+		 <dynamic-element name="showPercent" index="0" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="0" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="0" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[active]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="0" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-striped]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="0" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-small]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="0" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-warning]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="0" type="boolean" index-type="keyword"> 
+		 <dynamic-element name="succesPercent" index="0" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="warningPercent" index="0" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="dangerPercent" index="0" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[40%]]></dynamic-content> 
+	 </dynamic-element> 
+ 	
+	 <dynamic-element name="progressBar" index="3" type="text" index-type="keyword">  
+		 <dynamic-element name="pieColor" index="3" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="showPercent" index="3" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[false]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="3" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="3" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="3" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="3" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-small]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="3" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-danger]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="3" type="boolean" index-type="keyword"> 
+			 <dynamic-element name="succesPercent" index="3" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="3" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="3" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-content language-id="en_US"><![CDATA[false]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[35%]]></dynamic-content> 
+	 </dynamic-element> 
+
+ <dynamic-element name="progressBar" index="4" type="text" index-type="keyword"> 
+ <dynamic-element name="pieColor" index="0" type="text" index-type="keyword"> 
+ <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-element name="showPercent" index="0" type="boolean" index-type="keyword"> 
+ <dynamic-content language-id="en_US"><![CDATA[false]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-element name="typeBar" index="0" type="list" index-type="keyword"> 
+ <dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-element name="active" index="0" type="list" index-type="keyword"> 
+ <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-element name="striped" index="0" type="list" index-type="keyword"> 
+ <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-element name="width" index="0" type="list" index-type="keyword"> 
+ <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-element name="color" index="0" type="list" index-type="keyword"> 
+ <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-element name="multiColorBar" index="0" type="boolean" index-type="keyword"> 
+	 <dynamic-element name="succesPercent" index="0" type="text" index-type="keyword"> 
+	 	<dynamic-content language-id="en_US"><![CDATA[35%]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="warningPercent" index="0" type="text" index-type="keyword"> 
+	 	<dynamic-content language-id="en_US"><![CDATA[20%]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="dangerPercent" index="0" type="text" index-type="keyword"> 
+	 	<dynamic-content language-id="en_US"><![CDATA[10%]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-content language-id="en_US"><![CDATA[true]]></dynamic-content> 
+ </dynamic-element> 
+ <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+ </dynamic-element> 
+
+	<dynamic-element name="progressBar" index="5" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="5" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="showPercent" index="5" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="5" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="5" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="5" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-striped]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="5" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="5" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-purple]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="5" type="boolean" index-type="keyword"> 
+			 <dynamic-element name="succesPercent" index="5" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="5" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="5" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[65%]]></dynamic-content> 
+	 </dynamic-element> 
+	
+	<dynamic-element name="progressBar" index="6" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="6" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="showPercent" index="6" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="6" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="6" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="6" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-striped]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="6" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="6" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-pink]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="6" type="boolean" index-type="keyword"> 
+			 <dynamic-element name="succesPercent" index="6" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="6" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="6" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[40%]]></dynamic-content> 
+ </dynamic-element> 
+	
+	<dynamic-element name="progressBar" index="7" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="7" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="showPercent" index="7" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="7" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="7" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[active]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="7" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-striped]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="7" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="7" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[progress-yellow]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="7" type="boolean" index-type="keyword"> 
+			 <dynamic-element name="succesPercent" index="7" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="7" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="7" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[60%]]></dynamic-content> 
+ 	</dynamic-element> 
+ 	
+ 	<dynamic-element name="progressBar" index="8" type="text" index-type="keyword"> 
+	 <dynamic-element name="pieColor" index="8" type="text" index-type="keyword"> 
+	 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="showPercent" index="8" type="boolean" index-type="keyword"> 
+	 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="typeBar" index="8" type="list" index-type="keyword"> 
+	 <dynamic-content language-id="en_US"><![CDATA[bar]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="active" index="8" type="list" index-type="keyword"> 
+	 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="striped" index="8" type="list" index-type="keyword"> 
+	 <dynamic-content language-id="en_US"><![CDATA[progress-striped]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="width" index="8" type="list" index-type="keyword"> 
+	 <dynamic-content language-id="en_US"><![CDATA[ ]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="color" index="8" type="list" index-type="keyword"> 
+	 <dynamic-content language-id="en_US"><![CDATA[progress-inverse]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-element name="multiColorBar" index="8" type="boolean" index-type="keyword"> 
+		 <dynamic-element name="succesPercent" index="8" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="warningPercent" index="8" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="dangerPercent" index="8" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+	 </dynamic-element> 
+	 <dynamic-content language-id="en_US"><![CDATA[80%]]></dynamic-content> 
+ </dynamic-element> 
+		
+	 <dynamic-element name="progressBar" index="9" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="9" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[#D15B47]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="showPercent" index="9" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="9" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[pie]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="9" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="9" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="9" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="9" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="9" type="boolean" index-type="keyword"> 
+			 <dynamic-element name="succesPercent" index="9" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="9" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="9" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[20]]></dynamic-content> 
+	 </dynamic-element> 
+ 
+ 	
+	 <dynamic-element name="progressBar" index="10" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="10" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[#87CEEB]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="showPercent" index="10" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="10" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[pie]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="10" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="10" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="10" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="10" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="10" type="boolean" index-type="keyword"> 
+			 <dynamic-element name="succesPercent" index="10" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="10" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="10" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[55]]></dynamic-content> 
+	 </dynamic-element> 
+
+	
+	 <dynamic-element name="progressBar" index="11" type="text" index-type="keyword"> 
+		 <dynamic-element name="pieColor" index="11" type="text" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[#87B87F]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="showPercent" index="11" type="boolean" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="typeBar" index="11" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[pie]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="active" index="11" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="striped" index="11" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="width" index="11" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="color" index="11" type="list" index-type="keyword"> 
+		 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-element name="multiColorBar" index="11" type="boolean" index-type="keyword"> 
+			 <dynamic-element name="succesPercent" index="11" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="warningPercent" index="11" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-element name="dangerPercent" index="11" type="text" index-type="keyword"> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+			 </dynamic-element> 
+			 <dynamic-content language-id="en_US"><![CDATA[]]></dynamic-content> 
+		 </dynamic-element> 
+		 <dynamic-content language-id="en_US"><![CDATA[90]]></dynamic-content> 
+	 </dynamic-element> 
+  
+ </root>
